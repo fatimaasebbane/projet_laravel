@@ -13,8 +13,8 @@ class commentController extends Controller
     public function index()
     {
 
-        $comments=Comment::all();
-        return view('comment.index',compact('comments'));
+        // $comments=Comment::all();
+        // return view('comment.index',compact('comments'));
     }
 
     /**
@@ -43,16 +43,17 @@ class commentController extends Controller
         'email'=>$request->email
         ]);
         $comments=Comment::where('id_blog',$request->id_blog)->get();
-        return view('comment.index',compact('comments'));
+        $count=Comment::where('id_blog',$request->id_blog)->count();
+        return view('comment.index',compact('comments','count'));
     }
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
-    {
+    {   $count=Comment::where('id_blog',$id)->count();
         $comments=Comment::where('id_blog',$id)->get();
-        return view('comment.index',compact('comments'));
+        return view('comment.index',compact('comments','count','id'));
     }
 
     /**

@@ -4,37 +4,48 @@
     <body>
 
         <!-- Main Body -->
-        <section>
+        <section style="">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5 col-md-6 col-12 pb-4">
-                        <h1>Comments</h1>
-                        @foreach ($comments as $comment)
-                            <div class="comment mt-4 text-justify float-left">
-                                <h4 style="color:rgb(207, 34, 40)">{{ $comment->name }}</h4>
-                                <span>- {{ $comment->created_at }}</span>
-                                <br>
-                                <p style="color:black">{{ $comment->commantaire }}</p>
-                            </div>
-                        @endforeach
+                        <h1 class="text-center font-weight-normal">{{ $count }} commantaires</h1>
+                        @if ($count > 0)
+                            @foreach ($comments as $comment)
+                                <div class="darker mt-4 text-justify border border-dark rounded "
+                                    style="background-color: rgb(231, 225, 219)">
+                                    <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle"
+                                        width="40" height="40">
+                                    <h4>{{ $comment->name }}</h4>
+                                    <span>{{ $comment->created_at }}</span>
+                                    <br>
+                                    <p>{{ $comment->commantaire }}
+                                </div>
+                            @endforeach
+                        @else
+                            <h1 class="font-weight-normal">aucun commentaire</h1>
+                        @endif
+
+
                     </div>
                     <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
-                        <form action="{{ route('comment.store') }}" class="container" id="algin-form" method="post"
+                        <form action="{{ route('comment.store') }}" style="background-color: rgb(231, 225, 219)"
+                            class="container border border-dark rounded" id="algin-form" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <h4 style="color:rgb(198, 41, 49)">ajouter un commantaire</h4>
-                                <label for="message" style="color: black">Message</label>
-                                <textarea name="commantaire" cols="30" rows="5" class="form-control"
-                                    style="background-color: rgb(228, 212, 212);"></textarea>
+                                <h3 class="font-weight-normal">ajouter un commantaire</h3>
+                                <label for="message" class="font-weight-light">Message</label>
+                                <textarea name="commantaire" cols="30" rows="5" class="form-control border border-dark rounded"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="name" style="color:black">Name</label>
-                                <input type="text" name="name" id="fullname" class="form-control">
+                                <label for="name" class="font-weight-light">Name</label>
+                                <input type="text" name="name" id="fullname"
+                                    class="form-control border border-dark rounded">
                             </div>
                             <div class="form-group">
-                                <label for="email"style="color:black">Email</label>
-                                <input type="text" name="email" id="email" class="form-control">
+                                <label for="email" class="font-weight-light">Email</label>
+                                <input type="text" name="email" id="email"
+                                    class="form-control border border-dark rounded">
                             </div>
                             <div class="form-group">
                                 <input name="id_blog" value="{{ $comment->id_blog }}" hidden />
@@ -42,7 +53,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" id="post" class="btn">Post Comment</button>
+                                <button type="submit" id="post" class="btn btn-primary">Post Comment</button>
                             </div>
                         </form>
                     </div>

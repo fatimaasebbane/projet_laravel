@@ -10,7 +10,7 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
-    public function blog():HasMany{
+    public function blogs():HasMany{
         return $this->hasMany(Blog::class,'id_category');
     }
 }
