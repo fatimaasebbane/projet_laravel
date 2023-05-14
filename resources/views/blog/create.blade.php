@@ -15,11 +15,6 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">date creation</label>
-            <input type="date" class="form-control" id="exampleFormControlInput1" name='date_creation'
-                placeholder="date creation">
-        </div>
-        <div class="form-group">
             <label for="exampleFormControlInput1">description</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name='description'
                 placeholder="description">

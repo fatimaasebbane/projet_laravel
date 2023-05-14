@@ -8,17 +8,13 @@
         @foreach ($blogs as $blog)
             <div class="row">
                 <div class="col-5-md">
-                    <a href="">
+                    <a href="{{ route('comment.show', $blog->id) }}">
                         <img src={{ $blog->image }} alt="IMG-BLOG" width="400" height="300">
                     </a>
 
                     <div class="date-blo4 flex-col-c-m">
                         <span class="txt30 m-b-4">
-                            28
-                        </span>
-
-                        <span class="txt31">
-                            Dec, 2018
+                            {{ $blog->created_at }}
                         </span>
                     </div>
                     <div>
@@ -33,7 +29,7 @@
                             </span>
 
                             <span>
-                                {{ $blog->date_creation }}
+                                {{ $blog->created_at }}
                                 <span class="m-r-6 m-l-4">|</span>
                             </span>
 
@@ -50,13 +46,19 @@
                         <p>{{ $blog->description }} </p>
                     </div>
                 </div>
-                <div class="col-5-md">
-                    <form action="{{ route('blog.destroy', $blog->id) }}" method="post">
-                        <button type="submit" class="btn btn-danger">delete</button>
-                        @csrf
-                        @method('DELETE')
-                    </form>
-                </div>
+
+                @if ($blog->id_user == Auth::id())
+                    <div class="col-5-md">
+
+                        <form action="{{ route('blog.destroy', $blog->id) }}" method="post">
+                            <a class="btn btn-success" href="{{ route('blog.edit', $blog->id) }}">edit</a>
+
+                            <button type="submit" class="btn btn-danger">delete</button>
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                    </div>
+                @endif
             </div>
             <br>
             <br>

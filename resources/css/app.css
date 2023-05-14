@@ -1,0 +1,141 @@
+.navbar-nav {
+    width: 100%;
+}
+
+@media(min-width:568px) {
+    .end {
+        margin-left: auto;
+    }
+}
+
+@media(max-width:768px) {
+    #post {
+        width: 100%;
+    }
+}
+
+#clicked {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+    width: 100%;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: rgb(213, 191, 191);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+}
+
+#profile {
+    background-color: unset;
+
+}
+
+#post {
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: rgb(185, 167, 167);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 50%;
+}
+
+body {
+    background-color: rgb(176, 156, 156);
+}
+
+#nav-items li a,
+#profile {
+    text-decoration: none;
+    color: rgb(224, 219, 219);
+    background-color: rgb(181, 158, 158);
+}
+
+
+.comments {
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+.darker {
+    border: 1px solid #ecb21f;
+    background-color: rgb(183, 169, 169);
+    float: right;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.comment {
+    border: 1px solid rgb(196, 216, 216);
+    background-color: rgb(197, 213, 213);
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+
+}
+
+.comment h4,
+.comment span,
+.darker h4,
+.darker span {
+    display: inline;
+}
+
+.comment p,
+.comment span,
+.darker p,
+.darker span {
+    color: rgb(237, 225, 225);
+}
+
+h1,
+h4 {
+    color: rgb(223, 209, 209);
+    font-weight: bold;
+}
+
+label {
+    color: rgb(218, 200, 200);
+}
+
+#align-form {
+    margin-top: 20px;
+}
+
+.form-group p a {
+    color: rgb(204, 179, 179);
+}
+
+#checkbx {
+    background-color: rgb(230, 217, 217);
+}
+
+#darker img {
+    margin-right: 15px;
+    position: static;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: rgb(230, 217, 217);
+    border: 1px solid rgb(176, 207, 207);
+    border-radius: 12px;
+}
+
+form {
+    border: 1px solid rgb(169, 200, 200);
+    background-color: rgb(176, 210, 210);
+    border-radius: 5px;
+    padding: 20px;
+}

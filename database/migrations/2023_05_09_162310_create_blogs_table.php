@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('titre');
             $table->foreignId('id_user')->constrained('users');
             $table->foreignId('id_category')->constrained('categories');
-            $table->date('date_creation');
             $table->string('description');
             $table->timestamps();
         });

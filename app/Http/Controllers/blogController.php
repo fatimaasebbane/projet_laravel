@@ -32,7 +32,6 @@ class blogController extends Controller
         $this->validate($request,[
             'image'=>'required|image',
             'titre'=>'required',
-            'date_creation'=>'required',
             'description'=>'required',
             'category'=>'required'
         ]);
@@ -43,7 +42,6 @@ class blogController extends Controller
         $blog=Blog::create([
           'id_user'=>Auth::id(),
           'titre'=>$request->titre,
-          'date_creation'=>$request->date_creation,
           'description'=>$request->description,
           'id_category'=>$request->category,
           'image'=>'upload/photos/'.$newimage
@@ -52,8 +50,36 @@ class blogController extends Controller
          return redirect()->route('blog.index')->with('succes', 'added succeffly');
      }
 
-public function destroy(Blog $blog){
-    $blog->delete();
-    return redirect()->route('blog.index');
+     public function edit(Blog $blog){
+        $categories=Category::all();
+        return view('blog.edit')->with('blog',$blog)->with('categories',$categories);
+     }
+     public function update(Request $request, Blog $blog)
+    {
+        $this->validate($request,[
+            'image'=>'required|image',
+            'titre'=>'required',
+            'description'=>'required',
+            'category'=>'required'
+    ]);
+
+        if($request->hasfile('image')){
+             $image=$request->image;
+             $newimage=uniqid().$image->getClientOriginalName();
+             $image->move(public_path('upload/photos'),$newimage);
+             $blog->image='upload/photos/'.$newimage;
+        }
+        $blog->titre=$request->titre;
+        $blog->description=$request->description;
+        $blog->id_category=$request->category;
+
+         $blog->save();
+         return redirect()->route('blog.index');
+
+
+    }
+    public function destroy(Blog $blog){
+        $blog->delete();
+        return redirect()->route('blog.index');
 }
 }

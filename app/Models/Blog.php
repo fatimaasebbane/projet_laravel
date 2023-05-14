@@ -10,7 +10,7 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image','titre','id_user','id_category','date_creation','description'];
+    protected $fillable = ['image','titre','id_user','id_category','description'];
         public function user():BelongsTo{
         return $this->belongsTo(User::class,'id_user');
     }

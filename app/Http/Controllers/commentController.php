@@ -12,6 +12,7 @@ class commentController extends Controller
      */
     public function index()
     {
+
         $comments=Comment::all();
         return view('comment.index',compact('comments'));
     }
@@ -29,7 +30,20 @@ class commentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_blog'=>'required',
+            'commantaire'=>"required",
+            'name'=>"required",
+            'email'=>"required"
+        ]);
+        $comment=Comment::create([
+        'id_blog'=>$request->id_blog,
+        'commantaire'=>$request->commantaire,
+        'name'=>$request->name,
+        'email'=>$request->email
+        ]);
+        $comments=Comment::where('id_blog',$request->id_blog)->get();
+        return view('comment.index',compact('comments'));
     }
 
     /**
@@ -37,7 +51,8 @@ class commentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $comments=Comment::where('id_blog',$id)->get();
+        return view('comment.index',compact('comments'));
     }
 
     /**
@@ -45,7 +60,6 @@ class commentController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
