@@ -10,12 +10,15 @@ use App\Http\Controllers\ClientContactController;
 use App\Http\Controllers\ClientGaleryController;
 use App\Http\Controllers\clientIndex;
 use App\Http\Controllers\clientMenu;
+use App\Http\Controllers\clientProfile;
 use App\Http\Controllers\clientReservation;
 use App\Http\Controllers\commentController;
 use App\Http\Controllers\ContactConroller;
 use App\Http\Controllers\dinnerConroller;
 use App\Http\Controllers\galeryConroller;
 use App\Http\Controllers\lunchConroller;
+use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\RepasConroller;
 use App\Http\Controllers\reservationController;
 use App\Http\Controllers\UserController;
@@ -33,6 +36,7 @@ Route::resource('photos',galeryConroller::class);
 Route::resource('lunch', lunchConroller::class);
 Route::resource('reservation',reservationController::class);
 Route::resource('admin',AdminController::class);
+Route::resource('profile',ProfilController::class);
 Route::resource('user',UserController::class);
 Route::resource('blog',blogController::class);
 Route::resource('category',categoryController::class);
@@ -45,6 +49,9 @@ Route::resource('clientMenu',clientMenu::class);
 Route::resource('clientGalery',ClientGaleryController::class);
 Route::resource('clientBlog',clientBlog::class);
 Route::resource('clientBlog_detail',blog_detailController::class);
+Route::resource('clientprofile',clientProfile::class);
+
+
 
 Route::get('/', function () {
     return view('auth.login');

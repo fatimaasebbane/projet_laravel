@@ -5,22 +5,27 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     public function reservations():HasMany{
         return $this->hasMany(Reservation::class,'id_user');
-   }
+    }
    public function contacts():HasMany{
     return $this->hasMany(Contact::class,'id_user');
-}
-public function blogs():HasMany{
+    }
+    public function blogs():HasMany{
     return $this->hasMany(Blog::class,'id_user');
-}
+    }
+    public function profile():HasOne{
+    return $this->hasOne(Profile::class,'id_user');
+    }
     /**
      * The attributes that are mass assignable.
      *
