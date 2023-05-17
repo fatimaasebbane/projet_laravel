@@ -3,14 +3,29 @@
     <div class="container">
         @if ($profile)
             <div class="jumbotron">
-                <h5>phone:{{ $profile->phone }}</h5>
-                <h5>adresse:{{ $profile->adresse }}</h5>
-                <h5>bio:{{ $profile->genre }}</h5>
-                <h5>facebook:{{ $profile->facebook }}</h5>
-                <h5>instegram:{{ $profile->insta }}</h5>
-                <h5>image:
-                    <img src="{{ $profile->image }}" />
-                </h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>phone</th>
+                            <th>adresse</th>
+                            <th>bio</th>
+                            <th>facebook</th>
+                            <th>instegram</th>
+                            <th>image</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <tbody>
+                            <td>{{ $profile->phone }}</td>
+                            <td>{{ $profile->adresse }}</td>
+                            <td>{{ $profile->genre }}</td>
+                            <td>{{ $profile->facebook }}</td>
+                            <td>{{ $profile->insta }}</td>
+                            <td><img src="{{ $profile->image }}" width="150" height="200" />
+                            </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         @else
             <h2>aucun profile</h2>

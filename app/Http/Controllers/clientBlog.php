@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class clientBlog extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-      return view('client.blog');
+        $blogs=Blog::all();
+        return view('client.blog',compact('blogs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //
@@ -35,9 +33,7 @@ class clientBlog extends Controller
      */
     public function show(string $id)
     {
-        //
     }
-
     /**
      * Show the form for editing the specified resource.
      */

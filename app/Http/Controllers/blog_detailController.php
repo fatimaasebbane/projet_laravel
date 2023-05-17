@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class blog_detailController extends Controller
@@ -11,6 +13,7 @@ class blog_detailController extends Controller
      */
     public function index()
     {
+
        return view('client.blog-detail');
     }
 
@@ -35,8 +38,15 @@ class blog_detailController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $count=Comment::where('id_blog',$id)->count();
+        $blog=Blog::find($id);
+        $profile=$blog->user->profile;
+        $comments=Comment::where('id_blog',$id)->get();
+        return view('client.blog-detail',compact('comments','count','blog','profile'));
+
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

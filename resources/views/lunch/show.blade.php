@@ -3,8 +3,7 @@
     <base href="/public">
     <div class="container">
         <div class="card" style="width: 18rem;">
-            <img src="{{ asset(" $lunch->image") }}" class="card-img-top" alt="{{ $lunch->image }}" width="250"
-                height="300">
+            <img src="{{ $lunch->image }}" class="card-img-top" alt="{{ $lunch->image }}" width="300" height="250">
             <div class="card-body">
                 <h5 class="card-title">{{ $lunch->nom }}</h5>
                 <p class="card-text">{{ $lunch->description }}</p>

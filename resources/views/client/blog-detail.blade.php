@@ -1,5 +1,6 @@
 @extends('client.layout')
 @section('content')
+    <base href="/public">
     <!-- Title Page -->
     <section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15"
         style="background-image: url(clientpage/images/bg-title-page-03.jpg);">
@@ -26,7 +27,7 @@
                 <span class="txt29 m-l-10 m-r-10">/</span>
 
                 <span class="txt29">
-                    Cooking recipe delicious
+                    {{ $blog->titre }}
                 </span>
             </div>
         </div>
@@ -39,17 +40,17 @@
                         <div class="blo4 p-b-63">
                             <!-- - -->
                             <div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-                                <a href={{ route('clientBlog_detail.index') }}>
-                                    <img src={{ asset('clientpage/images/blog-05.jpg') }} alt="IMG-BLOG">
+                                <a href="">
+                                    <img src="{{ $blog->image }}" alt="IMG-BLOG">
                                 </a>
 
                                 <div class="date-blo4 flex-col-c-m">
                                     <span class="txt30 m-b-4">
-                                        28
+
                                     </span>
 
                                     <span class="txt31">
-                                        Dec, 2018
+                                        {{ $blog->created_at }}
                                     </span>
                                 </div>
                             </div>
@@ -57,47 +58,40 @@
                             <!-- - -->
                             <div class="text-blo4 p-t-33">
                                 <h4 class="p-b-16">
-                                    <a href={{ route('clientBlog_detail.index') }} class="tit9">Cooking recipe
-                                        Delicious</a>
+                                    <a href={{ route('clientBlog_detail.index') }} class="tit9">{{ $blog->titre }}
+                                    </a>
                                 </h4>
 
                                 <div class="txt32 flex-w p-b-24">
                                     <span>
-                                        by Admin
+                                        {{ $blog->user->name }}
                                         <span class="m-r-6 m-l-4">|</span>
                                     </span>
 
                                     <span>
-                                        28 December, 2018
+                                        {{ $blog->created_at }}
                                         <span class="m-r-6 m-l-4">|</span>
                                     </span>
 
                                     <span>
-                                        Cooking, Food
+                                        {{ $blog->category->name }}
                                         <span class="m-r-6 m-l-4">|</span>
                                     </span>
 
                                     <span>
-                                        8 Comments
+                                        {{ $count }} commentaires
                                     </span>
                                 </div>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sem. Nulla
-                                    facilisi. Sed ultricies eros a nibh tempus, in sodales mi vestibulum. Nullam quis dui ac
-                                    nisl ultrices euismod et sit amet urna. Morbi semper sapien quis ex tempor, sit amet
-                                    scelerisque eros rhoncus. Cras scelerisque auctor gravida. Nunc fermentum luctus
-                                    rhoncus. Nulla vulputate fermentum convallis. In quis pellentesque tortor. Cras metus
-                                    nibh, gravida vitae ante vel, finibus semper tellus. Nulla vel tincidunt magna. Morbi
-                                    tempor velit lectus, eu commodo quam volutpat vitae.
-                                </p>
+                                    {{ $blog->description }} </p>
                             </div>
                         </div>
 
                         <!-- Leave a comment -->
                         <form class="leave-comment p-t-10">
                             <h4 class="txt33 p-b-14">
-                                Leave a Comment
+                                ajouter un commantaire
                             </h4>
 
                             <p>
