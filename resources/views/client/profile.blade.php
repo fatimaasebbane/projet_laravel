@@ -34,16 +34,21 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="border: 2px solid black; margin:100px ; padding:40px">
         @if ($profile)
-            <form method="post">
+            <form action="{{ route('clientprofile.update', $profile->id) }}" method="post"
+                enctype="multipart/form-data">
+                @csrf
+                @method('put')
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="{{ $profile->image }}" alt="{{ $profile->image }}"
-                                style=" width:200;height:300" />
-                            <div class=" btn btn-primary">
+                            <div> <img src="{{ $profile->image }}" alt="{{ $profile->image }}" style="height: 160px" />
+                            </div>
+                            <div class="file btn btn-lg
+                                    btn-primary">
                                 Change Photo
+                                <input type="file" name="image" />
                             </div>
                         </div>
 
@@ -53,6 +58,11 @@
                             <h5>
                                 {{ $profile->user->name }}
                             </h5>
+                            <h6>
+
+                            </h6>
+                            <p class="proile-rating"><span></span></p>
+
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
@@ -67,14 +77,15 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                        <input type="submit" class="profile-edit-btn btn-success" name="btnAddMore"
+                            value="Edit Profile" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
                             <h3>bio</h3>
-                            <span>{{ $profile->bio }}</span>
+                            <textarea value="{{ $profile->bio }}" name="bio"></textarea>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -86,7 +97,7 @@
                                         <label>User Id</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>{{ $profile->id_user }}</p>
+                                        <p>{{ $profile->id_user }} </p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -94,7 +105,7 @@
                                         <label>Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>{{ $profile->user->name }} </p>
+                                        <p>{{ $profile->user->name }}</P>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -102,7 +113,7 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>{{ $profile->user->email }}</p>
+                                        <input type="text" name="email" value="{{ $profile->user->email }}" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -110,7 +121,7 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p> {{ $profile->phone }} </p>
+                                        <input type="text" name="phone" value=" {{ $profile->phone }} " />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -118,7 +129,7 @@
                                         <label>genre</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p> {{ $profile->genre }}</p>
+                                        <input type="text" name="genre" value="{{ $profile->genre }}" />
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +139,7 @@
                                         <label>facebook</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>{{ $profile->facebook }}</p>
+                                        <input type="text" name="facebook" value="{{ $profile->facebook }}" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -136,13 +147,11 @@
                                         <label> instegram</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>{{ $profile->insta }}</p>
+                                        <input type="text" name="insta" value="{{ $profile->insta }}" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label>Your Bio</label><br />
-                                        <p>Your detail description</p>
                                     </div>
                                 </div>
                             </div>
