@@ -2,7 +2,6 @@
 @section('content')
 
     <body>
-
         <!-- Main Body -->
         <section style="">
             <div class="container">
@@ -13,7 +12,7 @@
                             @foreach ($comments as $comment)
                                 <div class="darker mt-4 text-justify border border-dark rounded "
                                     style="background-color: rgb(231, 225, 219)">
-                                    <img src="{{ $profile->image }} " class="rounded-circle" width="40" height="40">
+                                    <img src="{{ $profile->image }}" class="rounded-circle" width="40" height="40">
                                     <h4>{{ $comment->name }}</h4>
                                     <span>{{ $comment->created_at }}</span>
                                     <br>

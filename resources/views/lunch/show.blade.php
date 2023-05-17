@@ -1,9 +1,10 @@
 @extends('layout')
 @section('content')
+    <base href="/public">
     <div class="container">
         <div class="card" style="width: 18rem;">
-            <img src="{{ asset(" $lunch->image") }}" class="card-img-top" alt="{{ $lunch->image }}" width="100"
-                height="100">
+            <img src="{{ asset(" $lunch->image") }}" class="card-img-top" alt="{{ $lunch->image }}" width="250"
+                height="300">
             <div class="card-body">
                 <h5 class="card-title">{{ $lunch->nom }}</h5>
                 <p class="card-text">{{ $lunch->description }}</p>

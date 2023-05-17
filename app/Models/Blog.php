@@ -20,4 +20,6 @@ class Blog extends Model
         public function comments():HasMany{
         return $this->hasMany(Comment::class,'id_comment');
     }
+
 }
+

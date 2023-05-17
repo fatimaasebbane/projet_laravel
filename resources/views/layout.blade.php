@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my_site</title>
+    <base href="/public">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="style.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
@@ -34,7 +35,7 @@
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:bisque !important">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('clientIndex.index') }}">admin</a>
+        <a class="navbar-brand" href="{{ route('admin') }}">admin</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -102,6 +103,7 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
 
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
