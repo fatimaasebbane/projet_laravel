@@ -79,9 +79,35 @@ class clientProfile extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $profile=Profil::find($id);
+        $this->validate($request,[
+            'phone' => 'required',
+            'adresse' => 'required',
+            'facebook' => 'required',
+            'image' => 'required|image',
+            'bio' => 'required',
+            'genre' => 'required',
+            'insta'=>'required'
+
+        ]);
+        if($request->hasfile('image')){
+        $image=$request->file('image');
+        $newimage=uniqid().$image->getClientOriginalName();
+        $image->move(public_path('upload/photos'),$newimage);
+        $profile->image='upload/photos/'.$newimage;
+        }
+       $profile->phone=$request->phone;
+       $profile->adresse=$request->adresse;
+       $profile->facebook=$request->facebook;
+       $profile->bio=$request->bio;
+       $profile->genre=$request->genre;
+       $profile->insta=$request->insta;
+       $profile->save();
+
+        return redirect()->route('clientprofile.index');
+
     }
 
     /**

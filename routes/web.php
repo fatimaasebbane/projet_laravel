@@ -28,6 +28,7 @@ Route::get('/clientReservation/store', [App\Http\Controllers\clientReservation::
 Route::get('/clientIndex/store', [App\Http\Controllers\clientIndex::class, 'store'])->name('createreservation');
 Route::get('/clientContact/store', [App\Http\Controllers\ClientContactController::class, 'store'])->name('createContact');
 Route::get('/user/reservations/{id}', [App\Http\Controllers\UserController::class, 'reservations'])->name('reservations');
+Route::get('/user/profile/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
 Route::get('/user/contacts/{id}', [App\Http\Controllers\UserController::class, 'contacts'])->name('contacts');
 Route::resource('repas',RepasConroller::class);
 Route::resource('contact', ContactConroller::class);
@@ -36,7 +37,6 @@ Route::resource('photos',galeryConroller::class);
 Route::resource('lunch', lunchConroller::class);
 Route::resource('reservation',reservationController::class);
 Route::resource('admin',AdminController::class);
-Route::resource('profile',ProfilController::class);
 Route::resource('user',UserController::class);
 Route::resource('blog',blogController::class);
 Route::resource('category',categoryController::class);

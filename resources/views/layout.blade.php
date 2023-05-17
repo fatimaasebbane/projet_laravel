@@ -34,7 +34,7 @@
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:bisque !important">
     <div class="container">
-        <a class="navbar-brand" href="./">admin</a>
+        <a class="navbar-brand" href="{{ route('clientIndex.index') }}">admin</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -102,9 +102,6 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('profile.show', Auth::id()) }}">
-                            profile
-                        </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();

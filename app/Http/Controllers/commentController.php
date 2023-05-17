@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -52,8 +53,15 @@ class commentController extends Controller
      */
     public function show(string $id)
     {   $count=Comment::where('id_blog',$id)->count();
+        $blog=Blog::find($id);
+        $profile=$blog->user->profile;
+    //   if($image=$profile->image){
+    //     $newimage=uniqid().$image->getClientOriginalName();
+    //     $image->move(public_path('upload/photos'),$newimage);
+    //     $profile->image='upload/photos/'.$newimage;
+    //   }
         $comments=Comment::where('id_blog',$id)->get();
-        return view('comment.index',compact('comments','count','id'));
+        return view('comment.index',compact('comments','count','id','profile'));
     }
 
     /**

@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class User extends Authenticatable
 {
@@ -24,7 +23,7 @@ class User extends Authenticatable
     return $this->hasMany(Blog::class,'id_user');
     }
     public function profile():HasOne{
-    return $this->hasOne(Profile::class,'id_user');
+    return $this->hasOne(Profil::class,'id_user');
     }
     /**
      * The attributes that are mass assignable.

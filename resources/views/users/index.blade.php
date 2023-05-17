@@ -36,12 +36,16 @@
                                 @method('DELETE')
                             </form>
                         </td>
+                        <td> <a class="btn btn-warning" href="{{ route('profile', $item->id) }}" role="button">profile
+                            </a>
+                        </td>
                         <td> <a class="btn btn-success" href="{{ route('reservations', $item->id) }}" role="button">all
                                 reservations</a>
                         </td>
                         <td> <a class="btn btn-success" href="{{ route('contacts', $item->id) }}" role="button">all
                                 messages</a>
                         </td>
+
                     </tr>
                 @endforeach
             </tbody>

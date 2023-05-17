@@ -33,8 +33,9 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="container" style="border: 2px solid black; margin:100px ; padding:40px">
+<body style="background-color: rgb(231, 225, 217)">
+    <div class="container"
+        style="border: 2px solid black;margin-left:150px; margin:100px ; padding:40px; background-color: rgb(218, 219, 194)">
         @if ($profile)
             <form action="{{ route('clientprofile.update', $profile->id) }}" method="post"
                 enctype="multipart/form-data">
@@ -43,12 +44,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <div> <img src="{{ $profile->image }}" alt="{{ $profile->image }}" style="height: 160px" />
-                            </div>
-                            <div class="file btn btn-lg
-                                    btn-primary">
+                            <img src="{{ $profile->image }}" alt="{{ $profile->image }}"
+                                style="height:160px ;border:1px solid black" />
+                            <div class="file btn btn-lg btn-primary">
                                 Change Photo
-                                <input type="file" name="image" />
+                                <input type="file" name="image" value="{{ $profile->image }}" />
                             </div>
                         </div>
 
@@ -58,9 +58,8 @@
                             <h5>
                                 {{ $profile->user->name }}
                             </h5>
-                            <h6>
-
-                            </h6>
+                            <div>
+                            </div>
                             <p class="proile-rating"><span></span></p>
 
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -79,13 +78,19 @@
                     <div class="col-md-2">
                         <input type="submit" class="profile-edit-btn btn-success" name="btnAddMore"
                             value="Edit Profile" />
+
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <h3>bio</h3>
-                            <textarea value="{{ $profile->bio }}" name="bio"></textarea>
+                            <h4>bio</h4>
+                            <textarea name="bio" style=" background-color:beige ">{{ $profile->bio }}</textarea>
+                            <a class="btn btn-success" style="color:white" href="{{ route('clientIndex.index') }}">page
+                                acceuil
+                            </a>
+
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -108,12 +113,14 @@
                                         <p>{{ $profile->user->name }}</P>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Email</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="email" value="{{ $profile->user->email }}" />
+                                        <input type="text" name="email" value="{{ $profile->user->email }}"
+                                            style=" background-color:beige" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -121,7 +128,8 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="phone" value=" {{ $profile->phone }} " />
+                                        <input type="text" style=" background-color:beige" name="phone"
+                                            value=" {{ $profile->phone }} " />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -129,7 +137,17 @@
                                         <label>genre</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="genre" value="{{ $profile->genre }}" />
+                                        <input type="text" style=" background-color:beige" name="genre"
+                                            value="{{ $profile->genre }}" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>adresse</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" style=" background-color:beige" name="adresse"
+                                            value="{{ $profile->adresse }}" />
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +157,8 @@
                                         <label>facebook</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="facebook" value="{{ $profile->facebook }}" />
+                                        <input type="text" style=" background-color:beige" name="facebook"
+                                            value="{{ $profile->facebook }}" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -147,7 +166,8 @@
                                         <label> instegram</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="insta" value="{{ $profile->insta }}" />
+                                        <input type="text" style=" background-color:beige" name="insta"
+                                            value="{{ $profile->insta }}" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -159,6 +179,7 @@
                     </div>
 
             </form>
+
     </div>
 @else
     <form action="{{ route('clientprofile.store') }}" method="POST" enctype="multipart/form-data"
@@ -203,8 +224,6 @@
         <button type="submit" class="btn btn-primary">creer</button>
     </form>
     @endif
-    </div>
-
 </body>
 
 </html>

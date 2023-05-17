@@ -26,9 +26,11 @@ class UserController extends Controller
         $contacts = User::find($id)->contacts;
         return view('users.contacts',compact('contacts'));
     }
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function profile( $id){
+        $profile = User::find($id)->profile;
+        return view('users.profile',compact('profile'));
+    }
+
     public function create()
     {
         return view('users.create');
