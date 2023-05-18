@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chef;
 use Illuminate\Http\Request;
 
 class clientAbout extends Controller
 {
     public function index()
     {
-        return view('client.about');
+        $chefs=Chef::all();
+        return view('client.about',compact('chefs'));
     }
     public function create()
     {

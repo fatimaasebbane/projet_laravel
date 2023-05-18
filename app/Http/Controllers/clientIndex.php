@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Chef;
 use App\Models\Comment;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
