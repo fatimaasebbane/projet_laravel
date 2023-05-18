@@ -8,8 +8,6 @@
             Reservation
         </h2>
     </section>
-
-
     <!-- Reservation -->
     <section class="section-reservation bg1-pattern p-t-100 p-b-113">
         <div class="container">
@@ -155,12 +153,12 @@
                     </h4>
 
                     <p class="size25">
-                        Donec quis euismod purus. Donec feugiat ligula rhoncus, varius nisl sed, tincidunt lectus.
-                        <span class="txt25">Nulla vulputate</span>
-                        , lectus vel volutpat efficitur, orci
-                        <span class="txt25">lacus sodales</span>
-                        sem, sit amet quam:
-                        <span class="txt24">(001) 345 6889</span>
+                        Call us
+                        Call <span class="txt24"> 06 36 69 30 87</span> 7/7days a week and from 8 a.m. to 8 p.m. (free
+                        service + price of a call).
+                        If you wish to call from abroad, dial <span class="txt24">(001) 345 6889</span> (cost of an
+                        international call).
+
                     </p>
                 </div>
 
@@ -170,9 +168,9 @@
                     </h4>
 
                     <p class="size26">
-                        Donec feugiat ligula rhoncus:
+                        call us:
                         <span class="txt24">(001) 345 6889</span>
-                        , varius nisl sed, tinci-dunt lectus sodales sem.
+
                     </p>
                 </div>
 

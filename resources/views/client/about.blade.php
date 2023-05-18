@@ -22,31 +22,26 @@
         </h3>
 
         <p class="t-center size32 m-l-r-auto">
-            Fusce at risus eget mi auctor pulvinar. Suspendisse maximus venenatis pretium. Orci varius natoque penatibus
-            et magnis dis parturient montes, nascetur ridiculus mus. Aliquam purus purus, lacinia a scelerisque in,
-            luctus vel felis. Donec odio diam, dignissim a efficitur at, efficitur et est. Pellentesque semper est ut
-            pulvinar ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-            himenaeos. Nulla et leo accumsan, egestas velit ac, fringilla tortor. Sed varius justo sed luctus mattis.
-        </p>
+            Magnificent Italy attracts travelers eager to explore its stunning landscapes, unique culture and
+            its gastronomic delights. With its rich cuisine, this beautiful Mediterranean land offers countless dishes
+            famous and traditional must-sees.
+            A multitude of delicacies and popular Italian dishes, sweet and savory, await your discovery during
+            your stays when you are in Italy at <span style="color:red"> Asebbane restaurant</span>
+            . These traditional Italian dishes are
+            deeply rooted in
+            Italian culture, and recipes are often passed down from generation to generation and are cherished for
+            their authentic origins. </p>
     </section>
 
 
     <!-- Video -->
     <section class="section-video parallax100" style="background-image: url(clientpage/images/header-menu-01.jpg);">
         <div class="content-video t-center p-t-225 p-b-250">
-            <span class="tit2 p-l-15 p-r-15">
-                Discover
-            </span>
 
-            <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3">
-                Our Video
-            </h3>
 
             <div class="btn-play ab-center size16 hov-pointer m-l-r-auto m-t-43 m-b-33" data-toggle="modal"
                 data-target="#modal-video-01">
-                <div class="flex-c-m sizefull bo-cir bgwhite color1 hov1 trans-0-4">
-                    <i class="fa fa-play fs-18 m-l-2" aria-hidden="true"></i>
-                </div>
+
             </div>
         </div>
     </section>
@@ -68,9 +63,9 @@
                         </h3>
 
                         <p class="t-center m-b-22 size3 m-l-r-auto">
-                            Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed
-                            imperdiet lacinia, nisl ante egestas mi, ac facilisis ligula sem id neque.
-                        </p>
+                            The best recipes for you
+                            with high quality and special taste, totally organic and very delicious, only from us and
+                            especially for you. </p>
                     </div>
                 </div>
 
@@ -93,16 +88,20 @@
                 <div class="col-md-6 p-t-45 p-b-30">
                     <div class="wrap-text-romantic t-center">
                         <span class="tit2 t-center">
-                            Romantic
+                            our
                         </span>
 
                         <h3 class="tit3 t-center m-b-35 m-t-5">
-                            Restaurant
+                            place
                         </h3>
 
                         <p class="t-center m-b-22 size3 m-l-r-auto">
-                            Fusce iaculis, quam quis volutpat cursus, tellus quam varius eros, in euismod lorem nisl in
-                            ante. Maecenas imperdiet vulputate dui sit amet vestibulum. Nulla quis suscipit nisl.
+                            Our magnificent place restaurant is a real gastronomic gem. As soon as you walk through your
+                            doors, you are transported to a world of exquisite flavors and refined elegance.
+                            The atmosphere that reigns in our restaurant is both warm and sophisticated. The carefully
+                            chosen decoration creates an atmosphere that is both modern and timeless. Tastefully set tables
+                            and dimmed lights add a touch of romance to the whole thing, making it the perfect spot for a
+                            night out or special celebration.
                         </p>
                     </div>
                 </div>

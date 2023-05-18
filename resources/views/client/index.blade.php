@@ -10,9 +10,9 @@
                             Welcome to
                         </span>
 
-                        <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-                            Pato Place
-                        </h2>
+                        <h3 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
+                            Asebbane Place
+                        </h3>
 
                         <div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
                             <!-- Button1 -->
@@ -31,7 +31,7 @@
                         </span>
 
                         <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-                            Pato Place
+                            Asebbane Place
                         </h2>
 
                         <div class="wrap-btn-slide1 animated visible-false" data-appear="slideInUp">
@@ -53,7 +53,7 @@
 
                         <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37"
                             data-appear="rotateInUpRight">
-                            Pato Place
+                            Asebbane Place
                         </h2>
 
                         <div class="wrap-btn-slide1 animated visible-false" data-appear="rotateIn">
@@ -78,7 +78,7 @@
                 <div class="col-md-6 p-t-45 p-b-30">
                     <div class="wrap-text-welcome t-center">
                         <span class="tit2 t-center">
-                            Italian Restaurant
+                            Italien Restaurant
                         </span>
 
                         <h3 class="tit3 t-center m-b-35 m-t-5">
@@ -86,11 +86,11 @@
                         </h3>
 
                         <p class="t-center m-b-22 size3 m-l-r-auto">
-                            Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed
-                            imperdiet lacinia, nisl ante egestas mi, ac facilisis ligula sem id neque.
-                        </p>
+                            Italien cuisine and its rich flavors, spices and herbs are becoming increasingly popular as
+                            tourism to Italie continues to flourish and more and more people are introduced to Italien
+                            food. </p>
 
-                        <a href="about.html" class="txt4">
+                        <a href="{{ route('clientAbout.index') }}" class="txt4">
                             Our Story
                             <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
                         </a>
@@ -115,7 +115,7 @@
             </span>
 
             <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3">
-                Pato Place
+                Asebbane Place
             </h3>
         </div>
 
@@ -141,10 +141,7 @@
                                     Phasellus lorem enim, luctus ut velit eget, con-vallis egestas eros.
                                 </p>
 
-                                <a href="#" class="txt4">
-                                    Learn More
-                                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -168,10 +165,7 @@
                                     Aliquam eget aliquam magna, quis posuere risus ac justo ipsum nibh urna
                                 </p>
 
-                                <a href="#" class="txt4">
-                                    Learn More
-                                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -195,10 +189,6 @@
                                     Sed ornare ligula eget tortor tempor, quis porta tellus dictum.
                                 </p>
 
-                                <a href="#" class="txt4">
-                                    Learn More
-                                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -242,7 +232,7 @@
                                 <img src={{ asset('clientpage/images/our-menu-05.jpg') }} alt="IMG-MENU">
 
                                 <!-- Button2 -->
-                                <a href="#" class="btn2 flex-c-m txt5 ab-c-m size5">
+                                <a href="{{ route('clientMenu.index') }}" class="btn2 flex-c-m txt5 ab-c-m size5">
                                     Dinner
                                 </a>
                             </div>
@@ -254,7 +244,7 @@
                                 <img src={{ asset('clientpage/images/our-menu-13.jpg') }} alt="IMG-MENU">
 
                                 <!-- Button2 -->
-                                <a href="#" class="btn2 flex-c-m txt5 ab-c-m size6">
+                                <a href="{{ route('clientMenu.index') }}" class="btn2 flex-c-m txt5 ab-c-m size6">
                                     Happy Hour
                                 </a>
                             </div>
@@ -270,7 +260,7 @@
                                 <img src={{ asset('clientpage/images/our-menu-08.jpg') }} alt="IMG-MENU">
 
                                 <!-- Button2 -->
-                                <a href="#" class="btn2 flex-c-m txt5 ab-c-m size7">
+                                <a href="{{ route('clientMenu.index') }}" class="btn2 flex-c-m txt5 ab-c-m size7">
                                     Drink
                                 </a>
                             </div>
@@ -282,7 +272,7 @@
                                 <img src={{ asset('clientpage/images/our-menu-10.jpg') }} alt="IMG-MENU">
 
                                 <!-- Button2 -->
-                                <a href="#" class="btn2 flex-c-m txt5 ab-c-m size8">
+                                <a href="{{ route('clientMenu.index') }}" class="btn2 flex-c-m txt5 ab-c-m size8">
                                     Starters
                                 </a>
                             </div>
@@ -294,7 +284,7 @@
                                 <img src={{ asset('clientpage/images/our-menu-16.jpg') }} alt="IMG-MENU">
 
                                 <!-- Button2 -->
-                                <a href="#" class="btn2 flex-c-m txt5 ab-c-m size9">
+                                <a href="{{ route('clientMenu.index') }}" class="btn2 flex-c-m txt5 ab-c-m size9">
                                     Dessert
                                 </a>
                             </div>
@@ -332,7 +322,7 @@
                                     style="background-image: url(clientpage/images/event-02.jpg);">
                                     <div class="time-event size10 txt6 effect1">
                                         <span class="txt-effect1 flex-c-m t-center">
-                                            08:00 PM Tuesday - 21 November 2018
+                                            08:00 PM Tuesday - 23 November 2023
                                         </span>
                                     </div>
                                 </a>
@@ -389,11 +379,6 @@
                                             </span>
                                         </div>
                                     </div>
-
-                                    <a href="#" class="txt4 m-t-40">
-                                        View Details
-                                        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -737,99 +722,37 @@
         <!-- - -->
         <div class="wrap-slick3">
             <div class="slick3">
-                <div class="item-slick3 item1-slick3">
-                    <div class="wrap-content-slide3 p-b-50 p-t-50">
-                        <div class="container">
-                            <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false"
-                                data-appear="zoomIn">
-                                <img src={{ asset('clientpage/images/avatar-01.jpg') }} alt="IGM-AVATAR">
-                            </div>
-
-                            <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-                                <p class="t-center txt12 size15 m-l-r-auto">
-                                    “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem,
-                                    mattis in pre-tium nec, fermentum viverra dui ”
-                                </p>
-
-                                <div class="star-review fs-18 color0 flex-c-m m-t-12">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                @foreach ($comments as $comment)
+                    <div class="item-slick3 item1-slick3">
+                        <div class="wrap-content-slide3 p-b-50 p-t-50">
+                            <div class="container">
+                                <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false"
+                                    data-appear="zoomIn">
+                                    <img src={{ $comment->blog->user->profile->image }} alt="IGM-AVATAR">
                                 </div>
 
-                                <div class="more-review txt4 t-center animated visible-false m-t-32"
-                                    data-appear="fadeInUp">
-                                    Marie Simmons ˗ New York
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+                                    <p class="t-center txt12 size15 m-l-r-auto">
+                                        “ {{ $comment->commantaire }} ”
+                                    </p>
 
-                <div class="item-slick3 item2-slick3">
-                    <div class="wrap-content-slide3 p-b-50 p-t-50">
-                        <div class="container">
-                            <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false"
-                                data-appear="zoomIn">
-                                <img src={{ asset('clientpage/images/avatar-04.jpg') }} alt="IGM-AVATAR">
-                            </div>
+                                    <div class="star-review fs-18 color0 flex-c-m m-t-12">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                                        <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                                        <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                                        <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                                    </div>
 
-                            <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-                                <p class="t-center txt12 size15 m-l-r-auto">
-                                    “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem,
-                                    mattis in pre-tium nec, fermentum viverra dui ”
-                                </p>
-
-                                <div class="star-review fs-18 color0 flex-c-m m-t-12">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                </div>
-
-                                <div class="more-review txt4 t-center animated visible-false m-t-32"
-                                    data-appear="fadeInUp">
-                                    Marie Simmons ˗ New York
+                                    <div class="more-review txt4 t-center animated visible-false m-t-32"
+                                        data-appear="fadeInUp">
+                                        {{ $comment->name }} ˗ {{ $comment->blog->user->profile->adresse }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="item-slick3 item3-slick3">
-                    <div class="wrap-content-slide3 p-b-50 p-t-50">
-                        <div class="container">
-                            <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false"
-                                data-appear="zoomIn">
-                                <img src={{ asset('clientpage/images/avatar-05.jpg') }} alt="IGM-AVATAR">
-                            </div>
-
-                            <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-                                <p class="t-center txt12 size15 m-l-r-auto">
-                                    “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem,
-                                    mattis in pre-tium nec, fermentum viverra dui ”
-                                </p>
-
-                                <div class="star-review fs-18 color0 flex-c-m m-t-12">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                    <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                                </div>
-
-                                <div class="more-review txt4 t-center animated visible-false m-t-32"
-                                    data-appear="fadeInUp">
-                                    Marie Simmons ˗ New York
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
 
             <div class="wrap-slick3-dots m-t-30"></div>
@@ -840,19 +763,9 @@
     <!-- Video -->
     <section class="section-video parallax100" style="background-image: url(clientpage/images/bg-cover-video-02.jpg);">
         <div class="content-video t-center p-t-225 p-b-250">
-            <span class="tit2 p-l-15 p-r-15">
-                Discover
-            </span>
-
-            <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3">
-                Our Video
-            </h3>
-
             <div class="btn-play ab-center size16 hov-pointer m-l-r-auto m-t-43 m-b-33" data-toggle="modal"
                 data-target="#modal-video-01">
-                <div class="flex-c-m sizefull bo-cir bgwhite color1 hov1 trans-0-4">
-                    <i class="fa fa-play fs-18 m-l-2" aria-hidden="true"></i>
-                </div>
+
             </div>
         </div>
     </section>
@@ -872,99 +785,37 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4 p-t-30">
-                    <!-- Block1 -->
-                    <div class="blo1">
-                        <div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
-                            <a href="blog-detail.html"><img src={{ asset('clientpage/images/blog-01.jpg') }}
-                                    alt="IMG-INTRO"></a>
+                @foreach ($blogs as $blog)
+                    <div class="col-md-4 p-t-30">
+                        <!-- Block1 -->
+                        <div class="blo1">
+                            <div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
+                                <a href="blog-detail.html"><img src={{ $blog->image }} alt="{{ $blog->image }}"></a>
 
-                            <div class="time-blog">
-                                21 Dec 2017
+                                <div class="time-blog">
+                                    {{ $blog->created_at }}
+                                </div>
+                            </div>
+
+                            <div class="wrap-text-blo1 p-t-35">
+                                <a href="blog-detail.html">
+                                    <h4 class="txt5 color0-hov trans-0-4 m-b-13">
+                                        {{ $blog->titre }}
+                                    </h4>
+                                </a>
+
+                                <p class="m-b-20">
+                                    {{ $blog->description }}
+                                </p>
+
+                                <a href="{{ route('clientBlog_detail.show', $blog->id) }}" class="txt4">
+                                    Continue Reading
+                                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
-
-                        <div class="wrap-text-blo1 p-t-35">
-                            <a href="blog-detail.html">
-                                <h4 class="txt5 color0-hov trans-0-4 m-b-13">
-                                    Best Places for Wine
-                                </h4>
-                            </a>
-
-                            <p class="m-b-20">
-                                Phasellus lorem enim, luctus ut velit eget, con-vallis egestas eros.
-                            </p>
-
-                            <a href="blog-detail.html" class="txt4">
-                                Continue Reading
-                                <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                            </a>
-                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4 p-t-30">
-                    <!-- Block1 -->
-                    <div class="blo1">
-                        <div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
-                            <a href="blog-detail.html"><img src={{ asset('clientpage/images/blog-02.jpg') }}
-                                    alt="IMG-INTRO"></a>
-
-                            <div class="time-blog">
-                                15 Dec 2017
-                            </div>
-                        </div>
-
-                        <div class="wrap-text-blo1 p-t-35">
-                            <a href="blog-detail.html">
-                                <h4 class="txt5 color0-hov trans-0-4 m-b-13">
-                                    Eggs and Cheese
-                                </h4>
-                            </a>
-
-                            <p class="m-b-20">
-                                Duis elementum, risus sit amet lobortis nunc justo condimentum ligula, vitae feugiat
-                            </p>
-
-                            <a href="blog-detail.html" class="txt4">
-                                Continue Reading
-                                <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 p-t-30">
-                    <!-- Block1 -->
-                    <div class="blo1">
-                        <div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
-                            <a href="blog-detail.html"><img src={{ asset('clientpage/images/blog-03.jpg') }}
-                                    alt="IMG-INTRO"></a>
-
-                            <div class="time-blog">
-                                12 Dec 2017
-                            </div>
-                        </div>
-
-                        <div class="wrap-text-blo1 p-t-35">
-                            <a href="blog-detail.html">
-                                <h4 class="txt5 color0-hov trans-0-4 m-b-13">
-                                    Style the Wedding Party
-                                </h4>
-                            </a>
-
-                            <p class="m-b-20">
-                                Sed ornare ligula eget tortor tempor, quis porta tellus dictum.
-                            </p>
-
-                            <a href="blog-detail.html" class="txt4">
-                                Continue Reading
-                                <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>

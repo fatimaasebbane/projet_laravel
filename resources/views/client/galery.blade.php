@@ -17,8 +17,6 @@
             <button class="label-gallery txt26 trans-0-4 is-actived" data-filter="*">
                 Tous les Photos
             </button>
-
-
             <button class="label-gallery txt26 trans-0-4" data-filter=".food">
                 soir
             </button>
@@ -34,7 +32,7 @@
 
         <div class="wrap-gallery isotope-grid flex-w p-l-25 p-r-25">
             @foreach ($photos as $item)
-                <div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events">
+                <div class="item-gallery isotope-item bo-rad-10 hov-img-zoom {{ $item->type }}">
                     <img src={{ $item->photo }} alt="IMG-GALLERY">
 
                     <div class="overlay-item-gallery trans-0-4 flex-c-m">

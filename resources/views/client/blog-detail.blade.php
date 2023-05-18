@@ -89,7 +89,8 @@
                         </div>
 
                         <!-- Leave a comment -->
-                        <form class="leave-comment p-t-10">
+                        <form action="{{ route('createComment') }}" class="wrap-form-booking" method="patch">
+                            @csrf
                             <h4 class="txt33 p-b-14">
                                 ajouter un commantaire
                             </h4>
@@ -98,28 +99,26 @@
                                 Your email address will not be published. Required fields are marked *
                             </p>
 
-                            <textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="Comment..."></textarea>
+                            <textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commantaire" placeholder="Comment..."></textarea>
 
                             <div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
                                 <input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="name"
-                                    placeholder="Name *">
+                                    placeholder="Name">
                             </div>
 
                             <div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
                                 <input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email"
-                                    placeholder="Email *">
+                                    placeholder="Email">
                             </div>
-
-                            <div class="size30 bo2 bo-rad-10 m-t-3 m-b-30">
-                                <input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="website"
-                                    placeholder="Website">
+                            <div>
+                                <input name="id_blog" type="text" value="{{ $blog->id_blog }}" hidden />
                             </div>
-
                             <!-- Button3 -->
                             <button type="submit" class="btn3 flex-c-m size31 txt11 trans-0-4">
                                 Post Comment
                             </button>
                         </form>
+
                     </div>
                 </div>
 
@@ -137,38 +136,14 @@
                             <h4 class="txt33 bo5-b p-b-35 p-t-58">
                                 Categories
                             </h4>
+                            @foreach ($categories as $category)
+                                <ul>
+                                    <li class="bo5-b p-t-8 p-b-8">
+                                        {{ $category->name }}
+                                    </li>
 
-                            <ul>
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Cooking recipe
-                                    </a>
-                                </li>
-
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Delicious foods
-                                    </a>
-                                </li>
-
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Events Design
-                                    </a>
-                                </li>
-
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Restaurant Place
-                                    </a>
-                                </li>
-
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        WordPress
-                                    </a>
-                                </li>
-                            </ul>
+                                </ul>
+                            @endforeach
                         </div>
 
                         <!-- Most Popular -->

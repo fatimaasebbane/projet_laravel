@@ -43,9 +43,7 @@ class commentController extends Controller
         'name'=>$request->name,
         'email'=>$request->email
         ]);
-        $comments=Comment::where('id_blog',$request->id_blog)->get();
-        $count=Comment::where('id_blog',$request->id_blog)->count();
-        return view('comment.index',compact('comments','count'));
+      return redirect()->route('comment.show',$request->id_blog);
     }
 
     /**
@@ -55,11 +53,6 @@ class commentController extends Controller
     {   $count=Comment::where('id_blog',$id)->count();
         $blog=Blog::find($id);
         $profile=$blog->user->profile;
-    //   if($image=$profile->image){
-    //     $newimage=uniqid().$image->getClientOriginalName();
-    //     $image->move(public_path('upload/photos'),$newimage);
-    //     $profile->image='upload/photos/'.$newimage;
-    //   }
         $comments=Comment::where('id_blog',$id)->get();
         return view('comment.index',compact('comments','count','id','profile'));
     }

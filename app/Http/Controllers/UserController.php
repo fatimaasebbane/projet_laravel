@@ -3,20 +3,53 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Database\Eloquent\Builder;
 class UserController extends Controller
 {
     public function __construnct(){
         $this->middleware('auth');
      }
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        // $users = User::all();
+        $query=User::query();
+        $date=$request->date_filter;
+        switch($date){
+            case 'today':
+                $query->whereDate('created_at',Carbon::today());
+                break;
+
+            case 'hier':
+                 $query->whereDate('created_at',Carbon::yesterday());
+                 break;
+            case 'ce_semaine':
+                 $query->whereBetween('created_at',[Carbon::now()->startOfWeek(),Carbon::now()->endOfWeek()]);
+                 break;
+            case 'semaine_dernier':
+                $query->whereBetween('created_at',[Carbon::now()->subWeek(),Carbon::now()]);
+                break;
+            case 'ce_mois':
+                 $query->whereMonth('created_at',Carbon::now()->month);
+                break;
+            case 'mois_dernier':
+                $query->whereMonth('created_at',Carbon::now()->subMonth()->month);
+                break;
+            case 'cette_annee':
+                    $query->whereYear('created_at',Carbon::now()->year);
+                   break;
+            case 'annee_dernier':
+                    $query->whereYear('created_at',Carbon::now()->subYear()->year);
+                    break;
+
+        }
+        $users=$query->get();
         return view('users.index', compact('users'));
 
     }
+
 
     public function reservations($id){
         $reservations = User::find($id)->reservations;

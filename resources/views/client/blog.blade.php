@@ -69,19 +69,15 @@
                                         {{ $blog->description }}
                                     </p>
 
-                                    <a href="{{ route('clientBlog_detail.index') }}" class="dis-block txt4 m-t-30">
-                                        Continue Reading
-                                        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                                    </a>
                                 </div>
                             </div>
                         @endforeach
 
                         <!-- Pagination -->
-                        <div class="pagination flex-l-m flex-w m-l--6 p-t-25">
+                        {{-- <div class="pagination flex-l-m flex-w m-l--6 p-t-25">
                             <a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
                             <a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
@@ -99,38 +95,15 @@
                             <h4 class="txt33 bo5-b p-b-35 p-t-58">
                                 Categories
                             </h4>
+                            @foreach ($categories as $category)
+                                <ul>
+                                    <li class="bo5-b p-t-8 p-b-8">
+                                        {{ $category->name }}
+                                    </li>
 
-                            <ul>
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Cooking recipe
-                                    </a>
-                                </li>
+                                </ul>
+                            @endforeach
 
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Delicious foods
-                                    </a>
-                                </li>
-
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Events Design
-                                    </a>
-                                </li>
-
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        Restaurant Place
-                                    </a>
-                                </li>
-
-                                <li class="bo5-b p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        WordPress
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
 
                         <!-- Most Popular -->

@@ -12,7 +12,7 @@ class RepasConroller extends Controller
      }
     public function index()
     {
-        $repas = Repas::latest()->paginate(4);
+        $repas = Repas::all();
         return view('repas.index', compact('repas'));
     }
 

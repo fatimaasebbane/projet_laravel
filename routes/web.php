@@ -6,6 +6,7 @@ use App\Http\Controllers\blogController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\clientAbout;
 use App\Http\Controllers\clientBlog;
+use App\Http\Controllers\clientComment;
 use App\Http\Controllers\ClientContactController;
 use App\Http\Controllers\ClientGaleryController;
 use App\Http\Controllers\clientIndex;
@@ -24,6 +25,8 @@ use App\Http\Controllers\reservationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/blog_detailController/store', [App\Http\Controllers\blog_detailController::class, 'store'])->name('createComment');
 Route::get('/clientReservation/store', [App\Http\Controllers\clientReservation::class, 'store'])->name('createReservation');
 Route::get('/clientIndex/store', [App\Http\Controllers\clientIndex::class, 'store'])->name('createreservation');
 Route::get('/clientContact/store', [App\Http\Controllers\ClientContactController::class, 'store'])->name('createContact');
@@ -50,6 +53,7 @@ Route::resource('clientGalery',ClientGaleryController::class);
 Route::resource('clientBlog',clientBlog::class);
 Route::resource('clientBlog_detail',blog_detailController::class);
 Route::resource('clientprofile',clientProfile::class);
+Route::resource('clientComment',clientComment::class);
 
 
 

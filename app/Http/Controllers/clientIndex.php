@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Comment;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +15,9 @@ class clientIndex extends Controller
      */
     public function index()
     {
-     return view('client.index');
+        $comments=Comment::latest()->paginate(5);
+        $blogs=Blog::latest()->paginate(3);
+     return view('client.index',compact('comments','blogs'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class clientBlog extends Controller
     public function index()
     {
         $blogs=Blog::all();
-        return view('client.blog',compact('blogs'));
+        $categories=Category::all();
+        return view('client.blog',compact('blogs','categories'));
     }
 
 

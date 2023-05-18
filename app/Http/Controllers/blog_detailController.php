@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -29,8 +30,19 @@ class blog_detailController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    { $request->validate([
+        'id_blog'=>'required',
+        'commantaire'=>"required",
+        'name'=>"required",
+        'email'=>"required"
+    ]);
+    $comment=Comment::create([
+    'id_blog'=>$request->id_blog,
+    'commantaire'=>$request->commantaire,
+    'name'=>$request->name,
+    'email'=>$request->email
+    ]);
+      return redirect()->route('clientBlog_detail.show',$request->id_blog );
     }
 
     /**
@@ -40,9 +52,9 @@ class blog_detailController extends Controller
     {
         $count=Comment::where('id_blog',$id)->count();
         $blog=Blog::find($id);
-        $profile=$blog->user->profile;
         $comments=Comment::where('id_blog',$id)->get();
-        return view('client.blog-detail',compact('comments','count','blog','profile'));
+        $categories=Category::all();
+        return view('client.blog-detail',compact('comments','count','blog','categories'));
 
     }
 
