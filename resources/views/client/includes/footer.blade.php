@@ -15,12 +15,12 @@
 
                     <li class="txt14 m-b-14">
                         <i class="fa fa-phone fs-16 dis-inline-block size19" aria-hidden="true"></i>
-                        (+1) 96 716 6879
+                        (+212) 636 69 3087
                     </li>
 
                     <li class="txt14 m-b-14">
                         <i class="fa fa-envelope fs-13 dis-inline-block size19" aria-hidden="true"></i>
-                        contact@site.com
+                        <a href="">AsebbaneRestaurant@gmail.com</a>
                     </li>
                 </ul>
 
@@ -31,11 +31,47 @@
 
                 <ul>
                     <li class="txt14">
-                        09:30 AM – 11:00 PM
+                        <a>
+                            MONDAY,THUESDAY,WEDNESDAY,THURSDAY
+                        </a>
+
+                        <span style="color:brown">
+                            10:00-22:00
+                        </span>
+                    </li>
+
+
+
+
+                    <li class="txt14">
+                        <a>
+                            FRIDAY
+                        </a>
+
+                        <span style="color:brown">
+                            (CLOSE)
+                        </span>
+                    </li>
+
+
+                    <li class="txt14">
+                        <a>
+                            SATURDAY
+                        </a>
+
+                        <span style="color:brown">
+                            10:00-02:00
+                        </span>
                     </li>
 
                     <li class="txt14">
-                        Every Day
+                        <a>
+                            SANDAY
+                        </a>
+
+                        <span style="color:brown">
+                            10:00-02:00
+                        </span>
                     </li>
                 </ul>
             </div>
@@ -51,14 +87,13 @@
                         <i class="fa fa-twitter" aria-hidden="true"></i>
                     </span>
                     <a href="#" class="txt15">
-                        @colorlib
+                        @AsebbaneRestaurant
                     </a>
 
                     <p class="txt14 m-b-18">
-                        Activello is a good option. It has a slider built into that displays the featured image in
-                        the slider.
+                        Asebbane Restaurant is the best option, if you want delicious healthy meals with high quality.
                         <a href="#" class="txt15">
-                            https://buff.ly/2zaSfAQ
+                            https://AsebbaneRestaurant.com
                         </a>
                     </p>
 
@@ -67,25 +102,7 @@
                     </span>
                 </div>
 
-                <div>
-                    <span class="fs-13 color2 m-r-5">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </span>
-                    <a href="#" class="txt15">
-                        @colorlib
-                    </a>
 
-                    <p class="txt14 m-b-18">
-                        Activello is a good option. It has a slider built into that displays
-                        <a href="#" class="txt15">
-                            https://buff.ly/2zaSfAQ
-                        </a>
-                    </p>
-
-                    <span class="txt16">
-                        21 Dec 2017
-                    </span>
-                </div>
             </div>
 
             <div class="col-sm-6 col-md-4 p-t-50">

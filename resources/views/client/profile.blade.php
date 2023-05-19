@@ -35,7 +35,7 @@
 
 <body style="background-color: rgb(231, 225, 217)">
     <div class="container"
-        style="border: 2px solid black;margin-left:150px; margin:100px ; padding:40px; background-color: rgb(218, 219, 194)">
+        style="border: 2px solid black ;margin-left:150px; margin:100px ; padding:40px; background-color: white">
         @if ($profile)
             <form action="{{ route('clientprofile.update', $profile->id) }}" method="post"
                 enctype="multipart/form-data">
