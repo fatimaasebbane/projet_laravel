@@ -1,7 +1,7 @@
 @extends('client.layout')
 @section('content')
     @include('client.includes.aside')
-
+    <base href="/public">
     <section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15"
         style="background-image: url(clientpage/images/bg-title-page-02.jpg);">
         <h2 class="tit6 t-center">
@@ -22,7 +22,17 @@
                             Book table
                         </h3>
                     </div>
+                    @if ($msg = Session::get('msg'))
+                        <div class="alert alert-secondary d-flex align-items-center" role="alert">
+                            <div>
+                                <h4>Welcome in Asebbane Restaurant</h4>
+                                <p>
+                                    {{ $msg }}
+                                </p>
+                            </div>
 
+                        </div>
+                    @endif
                     <form action="{{ route('createReservation') }}" class="wrap-form-reservation size22 m-l-r-auto"
                         method="patch">
                         <div class="row">

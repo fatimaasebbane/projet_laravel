@@ -15,7 +15,17 @@ class clientBlog extends Controller
         $categories=Category::all();
         return view('client.blog',compact('blogs','categories'));
     }
+    public function search(Request $request){
+    if($request->search){
+        $blogs=Blog::where('id_category',$request->search)->latest()->paginate(5);
+         $categories=Category::all();
+        return view('client.blog',compact('blogs','categories'));
 
+    }
+    else{
+        return redirect()->back();
+    }
+    }
 
     public function create()
     {

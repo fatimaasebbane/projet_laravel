@@ -1,5 +1,6 @@
 @extends('client.layout')
 @section('content')
+    <base href="/public">
     @include('client.includes.aside')
     <section class="section-slide">
         <div class="wrap-slick1">

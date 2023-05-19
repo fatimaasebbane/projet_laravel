@@ -47,7 +47,7 @@ class clientReservation extends Controller
           'phone'=>$request->phone,
           'email'=>$request->email
         ]);
-        return redirect()->route('clientReservation.index');
+        return redirect()->route('clientReservation.index')->with('msg','thank you for your trust, wait for our call just after one hour to confirm your reservation');
     }
 
     /**

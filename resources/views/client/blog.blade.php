@@ -1,5 +1,6 @@
 @extends('client.layout')
 @section('content')
+    <base href="/public">
     <!-- Title Page -->
     <section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15"
         style="background-image: url(clientpage/images/bg-title-page-03.jpg);">
@@ -84,12 +85,15 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
                         <!-- Search -->
-                        <div class="search-sidebar2 size12 bo2 pos-relative">
-                            <input class="input-search-sidebar2 txt10 p-l-20 p-r-55" type="search" name="query"
-                                placeholder="Search">
-                            <button class="btn-search-sidebar2 flex-c-m ti-search trans-0-4"></button>
-                        </div>
-
+                        <form class="d-flex" action="{{ route('search') }}" method="get" role="search">
+                            <select class="form-control me-2" type="search" name="search" placeholder="Search"
+                                aria-label="Search">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
                         <!-- Categories -->
                         <div class="categories">
                             <h4 class="txt33 bo5-b p-b-35 p-t-58">
