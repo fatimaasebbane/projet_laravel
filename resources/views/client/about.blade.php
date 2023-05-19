@@ -133,13 +133,13 @@
                         <!-- -Block5 -->
                         <div class="blo5 pos-relative p-t-60">
                             <div class="pic-blo5 size14 bo4 wrap-cir-pic hov-img-zoom ab-c-t">
-                                <img src={{ $chef->image }} alt="IGM-AVATAR">
+                                <img src={{ $chef->image }} alt="{{ $chef->image }}">
                             </div>
 
                             <div class="text-blo5 size34 t-center bo-rad-10 bo7 p-t-90 p-l-35 p-r-35 p-b-30">
-                                <a href="#" class="txt34 dis-block p-b-6">
+                                <div class="txt34 dis-block p-b-6">
                                     {{ $chef->nom }}
-                                </a>
+                                </div>
 
                                 <span class="dis-block t-center txt35 p-b-25">
                                     Chef

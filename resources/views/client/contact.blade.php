@@ -85,7 +85,7 @@
             </form>
 
             <div class="row p-t-135">
-                <div class="col-sm-8 col-md-4 col-lg-4 m-l-r-auto p-t-30">
+                <div class="col-sm-8 col-md-4 col-lg-6 m-l-r-auto p-t-30">
                     <div class="dis-flex m-l-23">
                         <div class="p-r-40 p-t-6">
                             <img src={{ asset('clientpage/images/icons/map-icon.png') }} alt="IMG-ICON">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-8 col-md-3 col-lg-4 m-l-r-auto p-t-30">
+                <div class="col-sm-8 col-md-4 col-lg-6 m-l-r-auto p-t-30">
                     <div class="dis-flex m-l-23">
                         <div class="p-r-40 p-t-6">
                             <img src={{ asset('clientpage/images/icons/phone-icon.png') }} alt="IMG-ICON">
@@ -116,30 +116,12 @@
                             </span>
 
                             <span class="txt23 size38">
-                                (+1) 96 716 6879
-                            </span>
+                                (+212) 6 36 69 30 87 </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-8 col-md-5 col-lg-4 m-l-r-auto p-t-30">
-                    <div class="dis-flex m-l-23">
-                        <div class="p-r-40 p-t-6">
-                            <img src={{ asset('clientpage/images/icons/clock-icon.png') }} alt="IMG-ICON">
-                        </div>
 
-
-                        <div class="flex-col-l">
-                            <span class="txt5 p-b-10">
-                                Opening Hours
-                            </span>
-
-                            <span class="txt23 size38">
-                                09:30 AM – 11:00 PM <br />Every Day
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

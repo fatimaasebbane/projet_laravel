@@ -30,9 +30,22 @@ class RepasConroller extends Controller
             'nom' => 'required',
             'prix' => 'required',
             'type' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'image'=>'required|image'
+
         ]);
-        $product = Repas::create($request->all());
+        $image=$request->file('image');
+        $newimage=uniqid().$image->getClientOriginalName();
+        $image->move(public_path('upload/photos'),$newimage);
+
+        $repas = Repas::create([
+            'nom' => $request->nom,
+            'description' => $request->description,
+            'prix' => $request->prix,
+            'type'=>$request->type,
+            'image' => 'upload/photos/'.$newimage
+        ]);
+
         return redirect()->route('repas.index')->with('succes', 'added succeffly');
     }
 
@@ -48,10 +61,29 @@ class RepasConroller extends Controller
 
     public function update(Request $request, Repas $repa)
     {
-        $repa->update($request->all());
-        $repas = Repas::latest()->paginate(4);
-        return view('repas.index')->with('succes', 'apdeted successflly')
-            ->with('repas', $repas);
+         $request->validate([
+        'nom' => 'required',
+        'prix' => 'required',
+        'type' => 'required',
+        'description' => 'required',
+        'image'=>'required|image'
+
+    ]);
+
+        if($request->hasfile('image')){
+        $image=$request->file('image');
+        $newimage=uniqid().$image->getClientOriginalName();
+        $image->move(public_path('upload/photos'),$newimage);
+        $repa->image='upload/photos/'.$newimage;
+   }
+   $repa->nom=$request->nom;
+   $repa->type=$request->type;
+   $repa->description=$request->description;
+   $repa->prix=$request->prix;
+    $repa->save();
+    return redirect()->route('repas.index')->with('succes', 'updated succeffly');
+
+
     }
 
     public function destroy(Repas $repa)

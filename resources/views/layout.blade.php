@@ -52,19 +52,16 @@
                     <a class="nav-link" href="reservation">reservation</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="lunch">lunch</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="dinner">dinner</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="photos">galery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="user">users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="blog">blog</a>
+                    <a class="nav-link" href="blog">blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chef">chefs</a>
                 </li>
             </ul>
         </div>

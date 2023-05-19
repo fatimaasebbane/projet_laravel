@@ -13,7 +13,7 @@
                     <th scope="col">prix</th>
                     <th scope="col">type</th>
                     <th scope="col">description</th>
-
+                    <th scope="col">image</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,7 +23,8 @@
                         <td>{{ $item->prix }}</td>
                         <td>{{ $item->type }}</td>
                         <td>{{ $item->description }}</td>
-
+                        <td><img src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail" width="100"
+                                height="100"></td>
                         <td><a class="btn btn-success" href="{{ route('repas.edit', $item->id) }}">edit</a>
                         </td>
                         <td> <a class="btn btn-primary" href="{{ route('repas.show', $item->id) }}">show</a></td>
@@ -45,5 +46,4 @@
         @endif
 
     </div>
-    {{ $repas->links() }}
 @endsection

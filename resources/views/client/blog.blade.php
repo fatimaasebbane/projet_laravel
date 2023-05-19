@@ -85,7 +85,7 @@
                     <div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
                         <!-- Search -->
                         <div class="search-sidebar2 size12 bo2 pos-relative">
-                            <input class="input-search-sidebar2 txt10 p-l-20 p-r-55" type="text" name="search"
+                            <input class="input-search-sidebar2 txt10 p-l-20 p-r-55" type="search" name="query"
                                 placeholder="Search">
                             <button class="btn-search-sidebar2 flex-c-m ti-search trans-0-4"></button>
                         </div>
@@ -105,191 +105,81 @@
                             @endforeach
 
                         </div>
-
-                        <!-- Most Popular -->
-                        <div class="popular">
-                            <h4 class="txt33 p-b-35 p-t-58">
-                                Most popular
-                            </h4>
-
-                            <ul>
-                                <li class="flex-w m-b-25">
-                                    <div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-                                        <a href="#">
-                                            <img src={{ asset('clientpage/images/blog-11.jpg') }} alt="IMG-BLOG">
-                                        </a>
-                                    </div>
-
-                                    <div class="size28">
-                                        <a href="#" class="dis-block txt28 m-b-8">
-                                            Best Places for Wine
-                                        </a>
-
-                                        <span class="txt14">
-                                            3 days ago
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li class="flex-w m-b-25">
-                                    <div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-                                        <a href="#">
-                                            <img src={{ asset('clientpage/images/blog-12.jpg') }} alt="IMG-BLOG">
-                                        </a>
-                                    </div>
-
-                                    <div class="size28">
-                                        <a href="#" class="dis-block txt28 m-b-8">
-                                            Eggs and Cheese
-                                        </a>
-
-                                        <span class="txt14">
-                                            July 2, 2017
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li class="flex-w m-b-25">
-                                    <div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-                                        <a href="#">
-                                            <img src={{ asset('clientpage/images/blog-13.jpg') }} alt="IMG-BLOG">
-                                        </a>
-                                    </div>
-
-                                    <div class="size28">
-                                        <a href="#" class="dis-block txt28 m-b-8">
-                                            Style the Wedding Party
-                                        </a>
-
-                                        <span class="txt14">
-                                            May 28, 2017
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li class="flex-w m-b-25">
-                                    <div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-                                        <a href="#">
-                                            <img src={{ asset('clientpage/images/blog-14.jpg') }} alt="IMG-BLOG">
-                                        </a>
-                                    </div>
-
-                                    <div class="size28">
-                                        <a href="#" class="dis-block txt28 m-b-8">
-                                            Cooking recipe Delicious
-                                        </a>
-
-                                        <span class="txt14">
-                                            May 25, 2017
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li class="flex-w m-b-25">
-                                    <div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-                                        <a href="#">
-                                            <img src={{ asset('clientpage/images/blog-15.jpg') }} alt="IMG-BLOG">
-                                        </a>
-                                    </div>
-
-                                    <div class="size28">
-                                        <a href="#" class="dis-block txt28 m-b-8">
-                                            Pizza is prepared fresh
-                                        </a>
-
-                                        <span class="txt14">
-                                            May 2, 2017
-                                        </span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-
                         <!-- Archive -->
                         <div class="archive">
                             <h4 class="txt33 p-b-20 p-t-43">
-                                Archive
+                                Horaire du Restauant
                             </h4>
 
                             <ul>
                                 <li class="flex-sb-m p-t-8 p-b-8">
                                     <a href="#" class="txt27">
-                                        uly 2018
+                                        LUNDI
                                     </a>
 
                                     <span class="txt29">
-                                        (9)
+                                        10:00-22:00
                                     </span>
                                 </li>
 
                                 <li class="flex-sb-m p-t-8 p-b-8">
                                     <a href="#" class="txt27">
-                                        June 2018
+                                        MARDI
                                     </a>
 
                                     <span class="txt29">
-                                        (39)
+                                        10:00-22:00
                                     </span>
                                 </li>
 
                                 <li class="flex-sb-m p-t-8 p-b-8">
                                     <a href="#" class="txt27">
-                                        May 2018
+                                        MERCREDI
                                     </a>
 
                                     <span class="txt29">
-                                        (29)
+                                        10:00-22:00
                                     </span>
                                 </li>
 
                                 <li class="flex-sb-m p-t-8 p-b-8">
                                     <a href="#" class="txt27">
-                                        April 2018
+                                        JEUDI
                                     </a>
 
                                     <span class="txt29">
-                                        (35)
+                                        10:00-22:00
                                     </span>
                                 </li>
 
                                 <li class="flex-sb-m p-t-8 p-b-8">
                                     <a href="#" class="txt27">
-                                        March 2018
+                                        VENDREDI
                                     </a>
 
                                     <span class="txt29">
-                                        (22)
+                                        (FERME)
+                                    </span>
+                                </li>
+
+
+                                <li class="flex-sb-m p-t-8 p-b-8">
+                                    <a href="#" class="txt27">
+                                        SAMEDI
+                                    </a>
+
+                                    <span class="txt29">
+                                        10:00-02:00
                                     </span>
                                 </li>
 
                                 <li class="flex-sb-m p-t-8 p-b-8">
                                     <a href="#" class="txt27">
-                                        February 2018
+                                        dimanche
                                     </a>
 
                                     <span class="txt29">
-                                        (32)
-                                    </span>
-                                </li>
-
-                                <li class="flex-sb-m p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        January 2018
-                                    </a>
-
-                                    <span class="txt29">
-                                        (21)
-                                    </span>
-                                </li>
-
-                                <li class="flex-sb-m p-t-8 p-b-8">
-                                    <a href="#" class="txt27">
-                                        December 2017
-                                    </a>
-
-                                    <span class="txt29">
-                                        (26)
+                                        10:00-02:00
                                     </span>
                                 </li>
                             </ul>

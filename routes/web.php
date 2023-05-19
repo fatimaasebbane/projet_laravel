@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\blog_detailController;
 use App\Http\Controllers\blogController;
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\chefControler;
 use App\Http\Controllers\clientAbout;
 use App\Http\Controllers\clientBlog;
 use App\Http\Controllers\clientComment;
@@ -15,11 +16,7 @@ use App\Http\Controllers\clientProfile;
 use App\Http\Controllers\clientReservation;
 use App\Http\Controllers\commentController;
 use App\Http\Controllers\ContactConroller;
-use App\Http\Controllers\dinnerConroller;
 use App\Http\Controllers\galeryConroller;
-use App\Http\Controllers\lunchConroller;
-use App\Http\Controllers\ProfilController;
-use App\Http\Controllers\profileController;
 use App\Http\Controllers\RepasConroller;
 use App\Http\Controllers\reservationController;
 use App\Http\Controllers\UserController;
@@ -35,9 +32,8 @@ Route::get('/user/profile/{id}', [App\Http\Controllers\UserController::class, 'p
 Route::get('/user/contacts/{id}', [App\Http\Controllers\UserController::class, 'contacts'])->name('contacts');
 Route::resource('repas',RepasConroller::class);
 Route::resource('contact', ContactConroller::class);
-Route::resource('dinner',dinnerConroller::class);
 Route::resource('photos',galeryConroller::class);
-Route::resource('lunch', lunchConroller::class);
+Route::resource('chef',chefControler::class);
 Route::resource('reservation',reservationController::class);
 Route::resource('admin',AdminController::class);
 Route::resource('user',UserController::class);
@@ -61,6 +57,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 Auth::routes();
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

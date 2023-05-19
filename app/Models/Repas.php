@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Repas extends Model
 {
     use HasFactory;
-    protected $fillable = ['nom','prix', 'type', 'description'];
+    protected $fillable = ['nom','prix', 'type', 'description','image'];
 
 }

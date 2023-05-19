@@ -18,8 +18,8 @@ class clientMenu extends Controller
         $main = Repas::where('type','main')->get();
         $drinks = Repas::where('type','drink')->get();
         $desserts = Repas::where('type','dessert')->get();
-        $lunches = Lunch::all();
-        $dinners=Dinner::all();
+        $lunches = Repas::where('type','lunch')->get();
+        $dinners = Repas::where('type','dinner')->get();
         return view('client.menu',compact('starters','main','drinks','desserts','lunches','dinners'));
     }
 
