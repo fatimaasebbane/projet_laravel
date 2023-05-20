@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chef;
+use App\Models\Profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class chefControler extends Controller
 {
@@ -12,8 +14,10 @@ class chefControler extends Controller
      }
     public function index()
     {
+         $profile=Profil::where('id_user',Auth::id())->first();
+
         $chefs=Chef::all();
-        return view('chef.index',compact('chefs'));
+        return view('chef.index',compact('chefs','profile'));
     }
 
     /**
@@ -21,7 +25,9 @@ class chefControler extends Controller
      */
     public function create()
     {
-       return view('chef.create');
+        $profile=Profil::where('id_user',Auth::id())->first();
+
+       return view('chef.create',compact('profile','profile'));
     }
 
     /**
@@ -43,7 +49,9 @@ class chefControler extends Controller
             'image' => 'upload/photos/'.$newphoto,
             'bio'=>$request->bio
           ]);
-        return redirect()->route('chef.index')->with('succes', 'added succeffly');
+          $profile=Profil::where('id_user',Auth::id())->first();
+
+        return redirect()->route('chef.index')->with('succes', 'added succeffly')->with('profile',$profile);
 
     }
 
@@ -52,7 +60,9 @@ class chefControler extends Controller
      */
     public function show(Chef $chef)
     {
-      return view('chef.show',compact('chef'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+
+      return view('chef.show',compact('chef','profile'));
     }
 
     /**
@@ -60,14 +70,17 @@ class chefControler extends Controller
      */
     public function edit(Chef $chef)
     {
-       return view('chef.edit',compact('chef'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+
+       return view('chef.edit',compact('chef','profile'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Chef $chef)
-    {
+    {        $profile=Profil::where('id_user',Auth::id())->first();
+
         $request->validate([
             'nom' => 'required',
             'image'=>'required|image',
@@ -85,7 +98,8 @@ class chefControler extends Controller
       $chef->save();
         $chefs = Chef::all();
         return view('chef.index')->with('succes', 'updeted successflly')
-            ->with('chefs', $chefs);
+            ->with('chefs', $chefs)
+            ->with('profile',$profile);
     }
 
     /**
@@ -93,8 +107,10 @@ class chefControler extends Controller
      */
     public function destroy(Chef $chef)
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
+
         $chef->delete();
-        return redirect()->route('chef.index')->with('succes', 'deleted');
+        return redirect()->route('chef.index')->with('succes', 'deleted')->with('profile',$profile);
 
     }
 }

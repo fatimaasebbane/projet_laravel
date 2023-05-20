@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profil;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +14,9 @@ class reservationController extends Controller
      }
     public function index()
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
         $reservations=Reservation::all();
-        return view('reservation.index')->with('reservations',$reservations);
+        return view('reservation.index')->with('reservations',$reservations)->with('profile',$profile);
 
  }
     public function Trashed(){
@@ -22,8 +24,8 @@ class reservationController extends Controller
         return view('reservation.Trashed')->with('reservations',$reservations);
     }
     public function create()
-    {
-       return view('reservation.create');
+    {  $profile=Profil::where('id_user',Auth::id())->first();
+       return view('reservation.create',compact('profile','profile'));
     }
 
     public function store(Request $request)
@@ -45,18 +47,22 @@ class reservationController extends Controller
         'phone'=>$request->phone,
         'email'=>$request->email
       ]);
-      return redirect()->route('reservation.index')->with('succes', 'updated succeffly');
+      $profile=Profil::where('id_user',Auth::id())->first();
+      return redirect()->route('reservation.index')->with('succes', 'updated succeffly')
+      ->with('profile',$profile);
 
     }
 
     public function show( $id)
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
      $reservation=Reservation::where('id',$id)->first();
-     return view('reservation.show')->with('reservation',$reservation);
+     return view('reservation.show')->with('reservation',$reservation)->with('profile',$profile);
     }
     public function edit(Reservation $reservation)
     {
-        return view('reservation.edit')->with('reservation',$reservation);
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('reservation.edit')->with('reservation',$reservation)->with('profile',$profile);
 
     }
 
@@ -79,14 +85,16 @@ class reservationController extends Controller
         $reservation->email=$request->email;
         $reservation->save();
         $reservations=Reservation::all();
-        return view('reservation.index')->with('reservations',$reservations);
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('reservation.index')->with('reservations',$reservations)->with('profile',$profile);
     }
 
     public function destroy($id)
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
      $reservation=Reservation::find($id);
      $reservation->delete();
-     return redirect()->back();
+     return redirect()->back()->with('profile',$profile);
     }
     public function hdelete( $id)
     {

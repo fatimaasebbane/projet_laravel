@@ -1,17 +1,21 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <div class="container">
-        <div class="form-group">
-            <label for="exampleFormControlInput1">{{ $repa->nom }}</label>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">{{ $repa->type }}</label>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">{{ $repa->prix }}</label>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">{{ $repa->description }}</label>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="card" style="width: 18rem; background-color:antiquewhite;color:black">
+            <img src="{{ $repa->image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title" style=" color:black">{{ $repa->nom }}</h4>
+                <p class="card-text">{{ $repa->description }} </p>
+                <h6>{{ $repa->type }} </h6>
+                <a href="#" class="btn btn-light " style=" color:black">{{ $repa->prix }}$ </a>
+
+            </div>
         </div>
     </div>
 @endsection

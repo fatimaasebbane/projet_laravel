@@ -1,9 +1,10 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 
 @section('content')
     <div class="container">
         <div class="jumbotron">
-            <h1>add a new user:</h1>
+            <br />
+            <h1 style="color:black">add a new user:</h1>
             <a class="btn btn-primary btn-lg" href="{{ route('user.create') }}" role="button">create</a>
 
         </div>
@@ -64,10 +65,10 @@
                         <td> <a class="btn btn-warning" href="{{ route('profile', $item->id) }}" role="button">profile
                             </a>
                         </td>
-                        <td> <a class="btn btn-success" href="{{ route('reservations', $item->id) }}" role="button">all
+                        <td> <a class="btn btn-success" href="{{ route('reservations', $item->id) }}" role="button">
                                 reservations</a>
                         </td>
-                        <td> <a class="btn btn-success" href="{{ route('contacts', $item->id) }}" role="button">all
+                        <td> <a class="btn btn-success" href="{{ route('contacts', $item->id) }}" role="button">
                                 messages</a>
                         </td>
 

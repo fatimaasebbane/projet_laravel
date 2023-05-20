@@ -56,6 +56,7 @@ Route::resource('clientComment',clientComment::class);
 Route::get('/', function () {
     return view('auth.login');
 });
+
 Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('admin');

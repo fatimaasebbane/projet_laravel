@@ -1,10 +1,11 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <div class="container">
+        <br><br><br>
         <div class="row">
             <div class="col">
                 <div class="jumbotron">
-                    <h1>edit a reservation:</h1>
+                    <h1 style="color: black">edit a reservation:</h1>
                     <hr />
                 </div>
             </div>

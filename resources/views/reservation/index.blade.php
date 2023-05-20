@@ -1,9 +1,12 @@
-@extends('layout')
-
+@extends('Admins.indexAdmin')
 @section('content')
     <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="jumbotron">
-            <h1>All reservations</h1>
+            <h1 style="color: black">All reservations</h1>
             <a class="btn btn-primary btn-lg" href="{{ route('reservation.create') }}" role="button">create</a>
             {{-- <a class="btn btn-danger btn-lg" href="{{ route('reservation.Trashed') }}" role="button">trashed<i
                     class="fa-solid fa-trash"></i></a> --}}

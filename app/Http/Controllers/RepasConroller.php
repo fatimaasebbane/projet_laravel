@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profil;
 use App\Models\Repas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RepasConroller extends Controller
 {
@@ -12,8 +14,9 @@ class RepasConroller extends Controller
      }
     public function index()
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
         $repas = Repas::all();
-        return view('repas.index', compact('repas'));
+        return view('repas.index', compact('repas','profile'));
     }
 
     /**
@@ -21,11 +24,13 @@ class RepasConroller extends Controller
      */
     public function create()
     {
-        return view('repas.create');
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('repas.create',compact('profile'));
     }
 
     public function store(Request $request)
     {
+
         $request->validate([
             'nom' => 'required',
             'prix' => 'required',
@@ -45,18 +50,20 @@ class RepasConroller extends Controller
             'type'=>$request->type,
             'image' => 'upload/photos/'.$newimage
         ]);
-
-        return redirect()->route('repas.index')->with('succes', 'added succeffly');
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return redirect()->route('repas.index')->with('succes', 'added succeffly')->with('profile',$profile);
     }
 
     public function show(Repas $repa)
     {
-        return view('repas.show',compact('repa'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('repas.show',compact('repa','profile'));
     }
 
     public function edit(Repas $repa)
     {
-       return view('repas.edit',compact('repa'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+       return view('repas.edit',compact('repa','profile'));
     }
 
     public function update(Request $request, Repas $repa)
@@ -81,15 +88,17 @@ class RepasConroller extends Controller
    $repa->description=$request->description;
    $repa->prix=$request->prix;
     $repa->save();
-    return redirect()->route('repas.index')->with('succes', 'updated succeffly');
+    $profile=Profil::where('id_user',Auth::id())->first();
+    return redirect()->route('repas.index')->with('succes', 'updated succeffly')->with('profile',$profile);
 
 
     }
 
     public function destroy(Repas $repa)
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
         $repa->delete();
-        return redirect()->route('repas.index')->with('succes', 'deleted');
+        return redirect()->route('repas.index')->with('succes', 'deleted')->with('profile',$profile);
 
     }
 }

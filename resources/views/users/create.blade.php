@@ -1,7 +1,13 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
+
 @section('content')
     <form action="{{ route('user.store') }}" class="container" method="post">
         @csrf
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <div class="form-group">
             <label for="exampleFormControlInput1">name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name='name' placeholder="name">

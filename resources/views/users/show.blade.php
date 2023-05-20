@@ -1,6 +1,10 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
-    <div class="container">
+    <br />
+    <br />
+    <br />
+    <br />
+    <form class="container">
         <div class="form-group">
             <label for="exampleFormControlInput1">{{ $user->name }}</label>
         </div>
@@ -11,5 +15,5 @@
             <label for="exampleFormControlInput1">{{ $user->password }}</label>
         </div>
 
-    </div>
+    </form>
 @endsection

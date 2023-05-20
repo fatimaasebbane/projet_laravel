@@ -1,9 +1,14 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 
 @section('content')
     <div class="container">
+        <br />
+        <br />
+        <br />
+        <br />
         <div class="jumbotron">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <h4 style="color:black">It uses utility classes for typography and spacing to space content out within the larger
+                container.</h4>
             <a class="btn btn-primary btn-lg" href="{{ route('repas.create') }}" role="button">create</a>
         </div>
         <table class="table">
@@ -23,8 +28,8 @@
                         <td>{{ $item->prix }}</td>
                         <td>{{ $item->type }}</td>
                         <td>{{ $item->description }}</td>
-                        <td><img src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail" width="100"
-                                height="100"></td>
+                        <td><img src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail"
+                                style="width:100px;height:100px; !important"></td>
                         <td><a class="btn btn-success" href="{{ route('repas.edit', $item->id) }}">edit</a>
                         </td>
                         <td> <a class="btn btn-primary" href="{{ route('repas.show', $item->id) }}">show</a></td>

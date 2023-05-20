@@ -1,6 +1,7 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <div class="container">
+        <br><br><br><br><br><br>
         <div class="row">
             <div class="col">
                 <div class="form-group">
@@ -27,4 +28,6 @@
 
                 </div>
             </div>
-        @endsection
+        </div>
+    </div>
+@endsection

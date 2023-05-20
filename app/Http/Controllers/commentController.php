@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class commentController extends Controller
 {
@@ -43,7 +45,8 @@ class commentController extends Controller
         'name'=>$request->name,
         'email'=>$request->email
         ]);
-      return redirect()->route('comment.show',$request->id_blog);
+        $profile=Profil::where('id_user',Auth::id())->first();
+      return redirect()->route('comment.show',$request->id_blog)->with('profile','profile');
     }
 
     /**
@@ -52,9 +55,10 @@ class commentController extends Controller
     public function show(string $id)
     {   $count=Comment::where('id_blog',$id)->count();
         $blog=Blog::find($id);
-        $profile=$blog->user->profile;
+        $profil=$blog->user->profile;
         $comments=Comment::where('id_blog',$id)->get();
-        return view('comment.index',compact('comments','count','id','profile'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('comment.index',compact('comments','count','id','profil','profile'));
     }
 
     /**

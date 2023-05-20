@@ -1,8 +1,9 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <form action="{{ route('blog.update', $blog->id) }}" class="container" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
+        <br><br><br><br>
         <div class="form-group">
             <label for="exampleFormControlInput1">titre</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name='titre' placeholder="titre"
@@ -16,11 +17,7 @@
                 @endforeach
             </select>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">date creation</label>
-            <input type="date" class="form-control" id="exampleFormControlInput1" name='date_creation'
-                placeholder="date creation" value="{{ $blog->date_creation }}">
-        </div>
+
         <div class="form-group">
             <label for="exampleFormControlInput1">description</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name='description'

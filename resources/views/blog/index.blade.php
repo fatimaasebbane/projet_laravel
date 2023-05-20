@@ -1,12 +1,18 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <div class="container">
+        <br />
+        <br />
+        <br />
+        <br />
+
+
         <div class="jumbotron">
-            <p>créer un blog:</p>
+            <p style="color:black">créer un blog:</p>
             <a class="btn btn-primary btn-lg" href="{{ route('blog.create') }}" role="button">create</a>
         </div>
-        @foreach ($blogs as $blog)
-            <div class="row">
+        <div class="row">
+            @foreach ($blogs as $blog)
                 <div class="col-5-md">
                     <a href="{{ route('comment.show', $blog->id) }}">
                         <img src={{ $blog->image }} alt="IMG-BLOG" width="400" height="300">
@@ -38,18 +44,14 @@
                                 <span class="m-r-6 m-l-4">|</span>
                             </span>
 
-                            <span>
-                                8 Comments
-                            </span>
+                            <a href="{{ route('comment.show', $blog->id) }}">
+                                Comments
+                            </a>
                         </div>
 
                         <p>{{ $blog->description }} </p>
                     </div>
-                </div>
-
-                @if ($blog->id_user == Auth::id())
-                    <div class="col-5-md">
-
+                    @if ($blog->id_user == Auth::id())
                         <form action="{{ route('blog.destroy', $blog->id) }}" method="post">
                             <a class="btn btn-success" href="{{ route('blog.edit', $blog->id) }}">edit</a>
 
@@ -57,12 +59,15 @@
                             @csrf
                             @method('DELETE')
                         </form>
-                    </div>
-                @endif
-            </div>
-            <br>
-            <br>
-            <br>
-        @endforeach
+                    @endif
+
+                    <br>
+
+                    <br>
+                    <br>
+                    <hr>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection

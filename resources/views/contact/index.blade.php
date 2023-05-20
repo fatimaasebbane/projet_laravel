@@ -1,7 +1,11 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 
 @section('content')
     <div class="container">
+        <br />
+        <br />
+        <br />
+        <br />
         <div class="jumbotron">
             <p> </p>
             <a class="btn btn-primary btn-lg" href="{{ route('contact.create') }}" role="button">create</a>

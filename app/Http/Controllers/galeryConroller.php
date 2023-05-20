@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Photo;
+use App\Models\Profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class galeryConroller extends Controller
 {
@@ -12,8 +14,9 @@ class galeryConroller extends Controller
      }
     public function index()
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
         $photos = Photo::all();
-        return view('photos.index', compact('photos'));
+        return view('photos.index', compact('photos','profile'));
     }
 
     /**
@@ -21,7 +24,8 @@ class galeryConroller extends Controller
      */
     public function create()
     {
-        return view('photos.create');
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('photos.create',compact('profile','profile'));
     }
 
     public function store(Request $request)
@@ -38,17 +42,20 @@ class galeryConroller extends Controller
             'type' => $request->type,
             'photo' => 'upload/photos/'.$newphoto
         ]);
-        return redirect()->route('photos.index')->with('succes', 'added succeffly');
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return redirect()->route('photos.index')->with('succes', 'added succeffly')
+        ->with('profile',$profile);
     }
 
     public function show(Photo $photo)
     {
-        return view('photos.show',compact('photo'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('photos.show',compact('photo','profile'));
     }
 
     public function edit(Photo $photo)
-    {
-       return view('photos.edit',compact('photo'));
+    { $profile=Profil::where('id_user',Auth::id())->first();
+       return view('photos.edit',compact('photo','profile'));
     }
     public function update(Request $request, Photo $photo)
     {
@@ -65,14 +72,16 @@ class galeryConroller extends Controller
         }
        $photo->type=$request->type;
        $photo->save();
-    return redirect()->route('photos.index')->with('succes', 'updated succeffly');
+       $profile=Profil::where('id_user',Auth::id())->first();
+    return redirect()->route('photos.index')->with('succes', 'updated succeffly')->with('profile',$profile);
 
     }
 
     public function destroy(Photo $photo)
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
         $photo->delete();
-        return redirect()->route('photos.index')->with('succes', 'deleted');
+        return redirect()->route('photos.index')->with('succes', 'deleted')->with('profile',$profile);
 
     }
 }

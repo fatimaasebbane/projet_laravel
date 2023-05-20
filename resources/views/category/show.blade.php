@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <div class="container">
         <div class="form-group">

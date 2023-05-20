@@ -1,7 +1,8 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <form action="{{ route('blog.store') }}" class="container" method="post" enctype="multipart/form-data">
         @csrf
+        <br><br><br><br><br>
         <div class="form-group">
             <label for="exampleFormControlInput1">titre</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name='titre' placeholder="name">

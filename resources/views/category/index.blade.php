@@ -1,9 +1,10 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 
 @section('content')
     <div class="container">
+        <br><br><br><br>
         <div class="jumbotron">
-            <p> </p>
+            <p style="color: black">Ajouter un Category </p>
             <a class="btn btn-primary btn-lg" href="{{ route('category.create') }}" role="button">create</a>
         </div>
         <table class="table">
@@ -18,7 +19,6 @@
                         <td>{{ $item->name }}</td>
                         <td><a class="btn btn-success" href="{{ route('category.edit', $item->id) }}">edit</a>
                         </td>
-                        <td> <a class="btn btn-primary" href="{{ route('category.show', $item->id) }}">show</a></td>
                         <td>
                             <form action="{{ route('category.destroy', $item->id) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>

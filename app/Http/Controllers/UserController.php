@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profil;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Builder;
 class UserController extends Controller
@@ -46,18 +48,21 @@ class UserController extends Controller
 
         }
         $users=$query->get();
-        return view('users.index', compact('users'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('users.index', compact('users','profile'));
 
     }
 
 
     public function reservations($id){
+        $profile=Profil::where('id_user',Auth::id())->first();
         $reservations = User::find($id)->reservations;
-        return view('users.reservations',compact('reservations'));
+        return view('users.reservations',compact('reservations','profile'));
     }
     public function contacts( $id){
+        $profile=Profil::where('id_user',Auth::id())->first();
         $contacts = User::find($id)->contacts;
-        return view('users.contacts',compact('contacts'));
+        return view('users.contacts',compact('contacts','profile'));
     }
     public function profile( $id){
         $profile = User::find($id)->profile;
@@ -65,8 +70,8 @@ class UserController extends Controller
     }
 
     public function create()
-    {
-        return view('users.create');
+    { $profile=Profil::where('id_user',Auth::id())->first();
+        return view('users.create',compact('profile'));
     }
 
     public function store(Request $request)
@@ -82,31 +87,36 @@ class UserController extends Controller
             'password'=>Hash::make($request->password),
 
         ]);
+
         return redirect()->route('user.index')->with('succes', 'added succeffly');
     }
 
     public function show(User $user)
     {
-        return view('users.show',compact('user'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+        return view('users.show',compact('user','profile'));
     }
 
     public function edit(User $user)
     {
-       return view('users.edit',compact('user'));
+        $profile=Profil::where('id_user',Auth::id())->first();
+       return view('users.edit',compact('profile','user'));
     }
 
     public function update(Request $request, User $user)
     {
+        $profile=Profil::where('id_user',Auth::id())->first();
         $user->update($request->all());
         $users = User::all();
         return view('users.index')->with('succes', 'apdeted successflly')
-            ->with('users', $users);
+            ->with('users', $users)
+            ->with('profile',$profile);
     }
 
     public function destroy(User $user)
-    {
+    { $profile=Profil::where('id_user',Auth::id())->first();
         $user->delete();
-        return redirect()->route('user.index')->with('succes', 'deleted');
+        return redirect()->route('user.index')->with('succes', 'deleted')->with('profile',$profile);
 
     }
 }

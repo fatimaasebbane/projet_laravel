@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,8 +15,10 @@ class blogController extends Controller
      }
      public function index()
      {
+        $profile=Profil::where('id_user',Auth::id())->first();
+
          $blogs = Blog::all();
-         return view('blog.index', compact('blogs'));
+         return view('blog.index', compact('blogs','profile'));
      }
 
      /**
@@ -23,8 +26,10 @@ class blogController extends Controller
       */
      public function create()
      {
+        $profile=Profil::where('id_user',Auth::id())->first();
+
         $categories=Category::all();
-         return view('blog.create')->with('categories',$categories);
+         return view('blog.create')->with('categories',$categories)->with('profile',$profile);
      }
 
      public function store(Request $request)
@@ -46,13 +51,16 @@ class blogController extends Controller
           'id_category'=>$request->category,
           'image'=>'upload/photos/'.$newimage
         ]);
+        $profile=Profil::where('id_user',Auth::id())->first();
 
-         return redirect()->route('blog.index')->with('succes', 'added succeffly');
+         return redirect()->route('blog.index')->with('succes', 'added succeffly')->with('profile',$profile);
      }
 
      public function edit(Blog $blog){
         $categories=Category::all();
-        return view('blog.edit')->with('blog',$blog)->with('categories',$categories);
+        $profile=Profil::where('id_user',Auth::id())->first();
+
+        return view('blog.edit')->with('blog',$blog)->with('categories',$categories)->with('profile',$profile);
      }
      public function update(Request $request, Blog $blog)
     {
@@ -74,12 +82,16 @@ class blogController extends Controller
         $blog->id_category=$request->category;
 
          $blog->save();
-         return redirect()->route('blog.index');
+         $profile=Profil::where('id_user',Auth::id())->first();
+
+         return redirect()->route('blog.index',compact('profile','profile'));
 
 
     }
     public function destroy(Blog $blog){
         $blog->delete();
-        return redirect()->route('blog.index');
+        $profile=Profil::where('id_user',Auth::id())->first();
+
+        return redirect()->route('blog.index',compact('profile','profile'));
 }
 }

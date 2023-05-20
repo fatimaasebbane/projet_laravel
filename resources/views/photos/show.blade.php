@@ -1,5 +1,6 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
+    <br><br><br><br>
     <div class="container">
         <div class="form-group">
             <img src="{{ $photo->photo }}">

@@ -1,8 +1,8 @@
-@extends('layout')
+@extends('Admins.indexAdmin')
 @section('content')
     <form action="{{ route('photos.store') }}" class="container" method="post" enctype="multipart/form-data">
         @csrf
-
+        <br><br><br><br>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">ajouter un image</label>
             <input type="file" class="form-control" name="photo" />

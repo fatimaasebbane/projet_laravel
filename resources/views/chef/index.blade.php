@@ -1,9 +1,14 @@
-@extends('layout')
-
+@extends('Admins.indexAdmin')
 @section('content')
     <div class="container">
+        <br />
+        <br />
+
+        <br />
+        <br />
+
         <div class="jumbotron">
-            <p> </p>
+            <p style="color:black"> ajouter un chef:</p>
             <a class="btn btn-primary btn-lg" href="{{ route('chef.create') }}" role="button">create</a>
         </div>
         <table class="table">
@@ -20,8 +25,9 @@
                     <tr>
                         <td>{{ $item->nom }}</td>
                         <td>{{ $item->bio }}</td>
-                        <td><img src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail" width="100"
-                                height="100"></td>
+                        <td><img src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail"
+                                style=" width:100px;
+                                height:100px;!important"></td>
 
                         <td><a class="btn btn-success" href="{{ route('chef.edit', $item->id) }}">edit</a>
                         </td>
