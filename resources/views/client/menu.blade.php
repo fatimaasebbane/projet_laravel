@@ -24,7 +24,7 @@
                             <!-- Item mainmenu -->
                             <div class="item-mainmenu m-b-36">
                                 <div class="flex-w flex-b m-b-3">
-                                    <a href="#" class="name-item-mainmenu txt21">
+                                    <a href="{{ route('cart.show', $item->id) }}" class="name-item-mainmenu txt21">
                                         {{ $item->nom }}
                                     </a>
 
@@ -51,7 +51,7 @@
                             <!-- Item mainmenu -->
                             <div class="item-mainmenu m-b-36">
                                 <div class="flex-w flex-b m-b-3">
-                                    <a href="#" class="name-item-mainmenu txt21">
+                                    <a href="{{ route('cart.show', $item->id) }}" class="name-item-mainmenu txt21">
                                         {{ $item->nom }}
                                     </a>
 
@@ -81,7 +81,8 @@
                             <!-- Item mainmenu -->
                             <div class="item-mainmenu m-b-36">
                                 <div class="flex-w flex-b m-b-3">
-                                    <a href="#" class="name-item-mainmenu txt21">
+                                    <a href="{{ route('cart.show', $item->id) }}" class="name-item-mainmenu txt21">
+
                                         {{ $item->nom }}
                                     </a>
 
@@ -107,7 +108,7 @@
                         @foreach ($desserts as $item)
                             <div class="item-mainmenu m-b-36">
                                 <div class="flex-w flex-b m-b-3">
-                                    <a href="#" class="name-item-mainmenu txt21">
+                                    <a href="{{ route('cart.show', $item->id) }}" class="name-item-mainmenu txt21">
                                         {{ $item->nom }}
                                     </a>
 
@@ -147,11 +148,12 @@
                     @foreach ($lunches as $item)
                         <div class="blo3 flex-w flex-col-l-sm m-b-30">
                             <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-                                <a href="#"><img src={{ $item->image }} alt="IMG-MENU"></a>
+                                <a href="{{ route('cart.show', $item->id) }}"><img src={{ $item->image }}
+                                        alt="IMG-MENU"></a>
                             </div>
 
                             <div class="text-blo3 size21 flex-col-l-m">
-                                <a href="#" class="txt21 m-b-3">
+                                <a href="{{ route('cart.show', $item->id) }}" class="txt21 m-b-3">
                                     {{ $item->nom }}
                                 </a>
 
@@ -170,11 +172,12 @@
                     @foreach ($lunches as $item)
                         <div class="blo3 flex-w flex-col-l-sm m-b-30">
                             <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-                                <a href="#"><img src={{ $item->image }} alt="IMG-MENU"></a>
+                                <a href="{{ route('cart.show', $item->id) }}"><img src={{ $item->image }}
+                                        alt="IMG-MENU"></a>
                             </div>
 
                             <div class="text-blo3 size21 flex-col-l-m">
-                                <a href="#" class="txt21 m-b-3">
+                                <a href="{{ route('cart.show', $item->id) }}" class="txt21 m-b-3">
                                     {{ $item->nom }}
                                 </a>
 
@@ -210,11 +213,12 @@
                     @foreach ($dinners as $item)
                         <div class="blo3 flex-w flex-col-l-sm m-b-30">
                             <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-                                <a href="#"><img src={{ $item->image }} alt="IMG-MENU"></a>
+                                <a href="{{ route('cart.show', $item->id) }}"><img src={{ $item->image }}
+                                        alt="IMG-MENU"></a>
                             </div>
 
                             <div class="text-blo3 size21 flex-col-l-m">
-                                <a href="#" class="txt21 m-b-3">
+                                <a href="{{ route('cart.show', $item->id) }}" class="txt21 m-b-3">
                                     {{ $item->nom }}
                                 </a>
 
@@ -234,11 +238,12 @@
                     @foreach ($dinners as $item)
                         <div class="blo3 flex-w flex-col-l-sm m-b-30">
                             <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-                                <a href="#"><img src={{ $item->image }} alt="IMG-MENU"></a>
+                                <a href="{{ route('cart.show', $item->id) }}"><img src={{ $item->image }}
+                                        alt="IMG-MENU"></a>
                             </div>
 
                             <div class="text-blo3 size21 flex-col-l-m">
-                                <a href="#" class="txt21 m-b-3">
+                                <a href="{{ route('cart.show', $item->id) }}" class="txt21 m-b-3">
                                     {{ $item->nom }}
                                 </a>
 

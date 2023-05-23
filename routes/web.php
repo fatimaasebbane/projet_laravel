@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\blog_detailController;
 use App\Http\Controllers\blogController;
+use App\Http\Controllers\cartController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\chefControler;
 use App\Http\Controllers\clientAbout;
@@ -14,9 +15,11 @@ use App\Http\Controllers\clientIndex;
 use App\Http\Controllers\clientMenu;
 use App\Http\Controllers\clientProfile;
 use App\Http\Controllers\clientReservation;
+use App\Http\Controllers\commandeController;
 use App\Http\Controllers\commentController;
 use App\Http\Controllers\ContactConroller;
 use App\Http\Controllers\galeryConroller;
+use App\Http\Controllers\pannierController;
 use App\Http\Controllers\RepasConroller;
 use App\Http\Controllers\reservationController;
 use App\Http\Controllers\UserController;
@@ -30,6 +33,9 @@ Route::get('/clientContact/store', [App\Http\Controllers\ClientContactController
 Route::get('/user/reservations/{id}', [App\Http\Controllers\UserController::class, 'reservations'])->name('reservations');
 Route::get('/user/profile/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
 Route::get('/user/contacts/{id}', [App\Http\Controllers\UserController::class, 'contacts'])->name('contacts');
+Route::get('/pannier/add/{id}', [App\Http\Controllers\pannierController::class, 'add'])->name('add_pannier');
+Route::resource('pannier', pannierController::class);
+
 Route::resource('repas',RepasConroller::class);
 Route::resource('contact', ContactConroller::class);
 Route::resource('photos',galeryConroller::class);
@@ -50,11 +56,15 @@ Route::resource('clientBlog',clientBlog::class);
 Route::resource('clientBlog_detail',blog_detailController::class);
 Route::resource('clientprofile',clientProfile::class);
 Route::resource('clientComment',clientComment::class);
+Route::resource('cart',cartController::class);
+Route::resource('commande',commandeController::class);
+
+
 
 
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view ('auth.login');
 });
 
 Auth::routes();
