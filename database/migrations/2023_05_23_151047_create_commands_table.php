@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contacts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
-            $table->string('name');
-            $table->string('email');
-            $table->integer('phone');
-            $table->string('message');
+        Schema::create('commands', function (Blueprint $table) {
+            $table->id();
+            $table->string('repas');
+            $table->string('quantite');
+            $table->integer('prix_total');
+            $table->string('adresse');
+            $table->string('livraison')->default('no_delivred');
             $table->timestamps();
+
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('commands');
     }
 };

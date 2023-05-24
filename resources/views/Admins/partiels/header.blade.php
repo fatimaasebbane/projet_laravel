@@ -16,11 +16,23 @@
                 <a class="nav-link" id="profileDropdown" data-toggle="dropdown">
                     <div class="navbar-profile">
                         <img class="img-xs rounded-circle" src="{{ $profile->image }}" alt="">
-                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ $profile->user->name }}</p>
-                        <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                     </div>
                 </a>
 
+            </li>
+            <li>
+                <div>
+
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
             </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"

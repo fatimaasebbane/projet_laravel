@@ -14,16 +14,16 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     public function reservations():HasMany{
-        return $this->hasMany(Reservation::class,'id_user');
+        return $this->hasMany(Reservation::class,'id_user')->cascadeDelete();
     }
    public function contacts():HasMany{
-    return $this->hasMany(Contact::class,'id_user');
+    return $this->hasMany(Contact::class,'id_user')->cascadeDelete();
     }
     public function blogs():HasMany{
-    return $this->hasMany(Blog::class,'id_user');
+    return $this->hasMany(Blog::class,'id_user')->cascadeDelete();
     }
     public function profile():HasOne{
-    return $this->hasOne(Profil::class,'id_user');
+    return $this->hasOne(Profil::class,'id_user')->cascadeDelete();
     }
     /**
      * The attributes that are mass assignable.
