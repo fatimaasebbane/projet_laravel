@@ -103,25 +103,4 @@
             </tfoot>
         </table>
     </div>
-
-    {{-- <script type="text/javascript">
-        $(".cart-remove").click(function(e) {
-            e.preventDefault();
-            var elem = $(this);
-            if (confirm("do you really want to remove this cart ?")) {
-                $.ajax({
-                    url: '{{ route('remove_pannier') }}',
-                    method: "delete",
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: elem.parents("tr").attr("data-id")
-                    },
-                    success: function(response) {
-                        window.location.reload();
-                    }
-
-                });
-            }
-        });
-    </script> --}}
 @endsection

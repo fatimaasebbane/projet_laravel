@@ -13,8 +13,7 @@
             <input type="text" class="form-control" id="exampleFormControlInput1" name='nom' placeholder="name">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">bio</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name='bio' placeholder="bio">
+            <textarea class="form-control" id="exampleFormControlInput1" name='bio' placeholder="bio">bio</textarea>
         </div>
 
         <div class="form-group">

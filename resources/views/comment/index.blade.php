@@ -10,12 +10,13 @@
 
             <div class="row">
                 <div class="col-md-6 ">
-                    <h1 class="text-center font-weight-normal" style="color: white">{{ $count }} commantaires</h1>
                     @if ($count > 0)
+                        <h1 class="text-center font-weight-normal" style="color: white">{{ $count }} commantaires</h1>
+
                         @foreach ($comments as $comment)
                             <div class="darker mt-4 text-justify border border-dark rounded "
                                 style="background-color: rgb(231, 225, 219)">
-                                <img src="{{ $profil->image }}" class="rounded-circle" width="40" height="40">
+                                <img src="{{ $profile->image }}" class="rounded-circle" width="40" height="40">
                                 <h4>{{ $comment->name }}</h4>
                                 <span>{{ $comment->created_at }}</span>
                                 <br>
@@ -23,7 +24,7 @@
                             </div>
                         @endforeach
                     @else
-                        <h1 class="font-weight-normal">aucun commentaire</h1>
+                        <h1 class="font-weight-normal" style="color: bisque">aucun commentaire</h1>
                     @endif
 
 
@@ -51,8 +52,11 @@
                                 class="form-control border border-dark rounded">
                         </div>
                         <div class="form-group">
-                            <input name="id_blog" value="{{ $comment->id_blog }}" hidden />
+                            <input name="id_blog" value="{{ $id }}" hidden />
 
+                        </div>
+                        <div class="form-group">
+                            <input name="id_user" value="{{ $id_user }}" hidden />
                         </div>
 
                         <div class="form-group">

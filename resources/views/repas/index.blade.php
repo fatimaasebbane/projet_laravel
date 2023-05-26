@@ -7,8 +7,7 @@
         <br />
         <br />
         <div class="jumbotron">
-            <h4 style="color:black">It uses utility classes for typography and spacing to space content out within the larger
-                container.</h4>
+            <h4 style="color:black">ajouter un repas:</h4>
             <a class="btn btn-primary btn-lg" href="{{ route('repas.create') }}" role="button">create</a>
         </div>
         <table class="table">

@@ -24,7 +24,7 @@
                 @foreach ($chefs as $item)
                     <tr>
                         <td>{{ $item->nom }}</td>
-                        <td>{{ $item->bio }}</td>
+                        <td style="width:20px">{{ $item->bio }}</td>
                         <td><img src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail"
                                 style=" width:100px;
                                 height:100px;!important"></td>

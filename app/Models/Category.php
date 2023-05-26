@@ -11,6 +11,6 @@ class Category extends Model
     use HasFactory;
     protected $fillable = ['name'];
     public function blogs():HasMany{
-        return $this->hasMany(Blog::class,'id_category')->cascadeDelete();
+        return $this->hasMany(Blog::class,'id_category');
     }
 }

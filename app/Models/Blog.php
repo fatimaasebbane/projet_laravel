@@ -18,7 +18,7 @@ class Blog extends Model
         return $this->belongsTo(Category::class,'id_category');
     }
         public function comments():HasMany{
-        return $this->hasMany(Comment::class,'id_comment')->cascadeDelete();
+        return $this->hasMany(Comment::class,'id_comment');
     }
 
 }

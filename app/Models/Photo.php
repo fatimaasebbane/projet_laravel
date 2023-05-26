@@ -9,7 +9,5 @@ class Photo extends Model
 {
     use HasFactory;
     protected $fillable=['photo','type'];
-    public function getFeaturedAttribute($photo){
-        return assert($photo);
- }
+
 }

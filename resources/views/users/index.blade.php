@@ -4,13 +4,13 @@
     <div class="container">
         <div class="jumbotron">
             <br />
-            <h1 style="color:black">add a new user:</h1>
+            <h1 style="color:black">add a new client:</h1>
             <a class="btn btn-primary btn-lg" href="{{ route('user.create') }}" role="button">create</a>
 
         </div>
         <div class="row py-2 container">
             <div class="col-md-6">
-                <h2>liste des users</h2>
+                <h2>liste des clients</h2>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -69,7 +69,7 @@
                                 reservations</a>
                         </td>
                         <td> <a class="btn btn-success" href="{{ route('contacts', $item->id) }}" role="button">
-                                messages</a>
+                                msg</a>
                         </td>
 
                     </tr>

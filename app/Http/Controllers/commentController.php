@@ -34,12 +34,14 @@ class commentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id_user'=>'required',
             'id_blog'=>'required',
             'commantaire'=>"required",
             'name'=>"required",
             'email'=>"required"
         ]);
         $comment=Comment::create([
+        'id_user'=>$request->id_user,
         'id_blog'=>$request->id_blog,
         'commantaire'=>$request->commantaire,
         'name'=>$request->name,
@@ -55,10 +57,10 @@ class commentController extends Controller
     public function show(string $id)
     {   $count=Comment::where('id_blog',$id)->count();
         $blog=Blog::find($id);
-        $profil=$blog->user->profile;
+        $id_user=Auth::id();
         $comments=Comment::where('id_blog',$id)->get();
         $profile=Profil::where('id_user',Auth::id())->first();
-        return view('comment.index',compact('comments','count','id','profil','profile'));
+        return view('comment.index',compact('comments','id_user','count','id','profile'));
     }
 
     /**

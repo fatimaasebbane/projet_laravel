@@ -5,10 +5,7 @@
             <div class="wrap_header trans-0-3">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href={{ route('clientIndex.index') }}>
-                        <img src={{ asset('clientpage/images/icons/logo.png') }} alt="IMG-LOGO"
-                            data-logofixed={{ asset('clientpage/images/icons/logo2.png') }}>
-                    </a>
+
                 </div>
 
                 <!-- Menu -->
@@ -56,8 +53,7 @@
 
                                         @if (Route::has('register'))
                                             <li class="nav-item">
-                                                <a class="nav-link"
-                                                    href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                             </li>
                                         @endif
                                     @else

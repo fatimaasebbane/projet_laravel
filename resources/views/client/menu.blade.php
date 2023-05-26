@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
                     <div class="wrap-item-mainmenu p-b-22">
-                        <h3 class="tit-mainmenu tit10 p-b-25">
+                        <h3 class="tit-mainmenu tit10 p-b-25" style="color:brown">
                             STARTERS:
                         </h3>
                         @foreach ($starters as $item)
@@ -31,7 +31,7 @@
                                     <div class="line-item-mainmenu bg3-pattern"></div>
 
                                     <div class="price-item-mainmenu txt22">
-                                        {{ $item->prix }}
+                                        {{ $item->prix }}$
                                     </div>
                                 </div>
 
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="wrap-item-mainmenu p-b-22">
-                        <h3 class="tit-mainmenu tit10 p-b-25">
+                        <h3 class="tit-mainmenu tit10 p-b-25" style="color:brown">
                             Drinks
                         </h3>
                         @foreach ($drinks as $item)
@@ -58,7 +58,7 @@
                                     <div class="line-item-mainmenu bg3-pattern"></div>
 
                                     <div class="price-item-mainmenu txt22">
-                                        {{ $item->prix }}
+                                        {{ $item->prix }}$
                                     </div>
                                 </div>
 
@@ -74,7 +74,7 @@
 
                 <div class="col-md-10 col-lg-6 p-l-35 p-l-15-lg m-l-r-auto">
                     <div class="wrap-item-mainmenu p-b-22">
-                        <h3 class="tit-mainmenu tit10 p-b-25">
+                        <h3 class="tit-mainmenu tit10 p-b-25" style="color:brown">
                             Main
                         </h3>
                         @foreach ($main as $item)
@@ -89,7 +89,7 @@
                                     <div class="line-item-mainmenu bg3-pattern"></div>
 
                                     <div class="price-item-mainmenu txt22">
-                                        {{ $item->prix }}
+                                        {{ $item->prix }}$
                                     </div>
                                 </div>
 
@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="wrap-item-mainmenu p-b-22">
-                        <h3 class="tit-mainmenu tit10 p-b-25">
+                        <h3 class="tit-mainmenu tit10 p-b-25" style="color:brown">
                             Dessert
                         </h3>
 
@@ -115,7 +115,7 @@
                                     <div class="line-item-mainmenu bg3-pattern"></div>
 
                                     <div class="price-item-mainmenu txt22">
-                                        {{ $item->prix }}
+                                        {{ $item->prix }}$
                                     </div>
                                 </div>
 
@@ -162,7 +162,7 @@
                                 </span>
 
                                 <span class="txt22 m-t-20">
-                                    {{ $item->prix }}
+                                    {{ $item->prix }}$
                                 </span>
                             </div>
                         </div>
@@ -186,7 +186,7 @@
                                 </span>
 
                                 <span class="txt22 m-t-20">
-                                    {{ $item->prix }}
+                                    {{ $item->prix }}$
                                 </span>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                                 </span>
 
                                 <span class="txt22 m-t-20">
-                                    {{ $item->prix }}
+                                    {{ $item->prix }}$
                                 </span>
                             </div>
                         </div>
@@ -252,7 +252,7 @@
                                 </span>
 
                                 <span class="txt22 m-t-20">
-                                    {{ $item->prix }}
+                                    {{ $item->prix }}$
                                 </span>
                             </div>
                         </div>
@@ -261,24 +261,3 @@
             </div>
         </div>
     </section>
-
-
-    <!-- Sign up -->
-    <div class="section-signup bg1-pattern p-t-85 p-b-85">
-        <form class="flex-c-m flex-w flex-col-c-m-lg p-l-5 p-r-5">
-            <span class="txt5 m-10">
-                Specials Sign up
-            </span>
-
-            <div class="wrap-input-signup size17 bo2 bo-rad-10 bgwhite pos-relative txt10 m-10">
-                <input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email-address"
-                    placeholder="Email Adrress">
-                <i class="fa fa-envelope ab-r-m m-r-18" aria-hidden="true"></i>
-            </div>
-
-            <!-- Button3 -->
-            <button type="submit" class="btn3 flex-c-m size18 txt11 trans-0-4 m-10">
-                Sign-up
-            </button>
-        </form>
-    </div>

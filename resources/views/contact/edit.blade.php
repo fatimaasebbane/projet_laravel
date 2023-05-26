@@ -4,6 +4,7 @@
     <form action="{{ route('contact.update', $contact->id) }}" class="container" method="post">
         @csrf
         @method('put')
+        <br><br><br><br><br>
         <div class="form-group">
             <label for="exampleFormControlInput1">name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $contact->name }}" name='name'

@@ -6,10 +6,7 @@
         <br />
         <br />
         <br />
-        <div class="jumbotron">
-            <p> </p>
-            <a class="btn btn-primary btn-lg" href="{{ route('contact.create') }}" role="button">create</a>
-        </div>
+        <br />
         <table class="table">
             <thead>
                 <tr>
