@@ -19,9 +19,7 @@ class User extends Authenticatable
    public function contacts():HasMany{
     return $this->hasMany(Contact::class,'id_user');
     }
-    public function comments():HasMany{
-        return $this->hasMany(Comment::class,'id_user');
-        }
+
     public function blogs():HasMany{
     return $this->hasMany(Blog::class,'id_user');
     }

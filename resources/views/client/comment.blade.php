@@ -19,7 +19,7 @@
                 <div class="col-md-11 col-lg-9 col-xl-7">
                     @foreach ($comments as $comment)
                         <div class="d-flex flex-start">
-                            <img class="rounded-circle shadow-1-strong me-3" src="{{ $profile->image }}" alt="avatar"
+                            <img class="rounded-circle shadow-1-strong me-3" src="{{ $comment->image }}" alt="avatar"
                                 width="65" height="65" />
                             <div class="card w-100" style="border:1px solid black">
                                 <div class="card-body p-4">

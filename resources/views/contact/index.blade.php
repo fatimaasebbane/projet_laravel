@@ -25,8 +25,7 @@
                         <td>{{ $item->phone }}</td>
                         <td>{{ $item->message }}</td>
 
-                        <td><a class="btn btn-success" href="{{ route('contact.edit', $item->id) }}">edit</a>
-                        </td>
+
                         <td> <a class="btn btn-primary" href="{{ route('contact.show', $item->id) }}">show</a></td>
                         <td>
                             <form action="{{ route('contact.destroy', $item->id) }}" method="post">

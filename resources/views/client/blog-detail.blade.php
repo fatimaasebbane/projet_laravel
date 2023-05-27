@@ -115,7 +115,8 @@
                                 <input type="text" name="id_blog" placeholder="blog" value="{{ $blog->id }}" hidden>
                             </div>
                             <div>
-                                <input type="text" name="id_user" placeholder="blog" value="{{ $id_user }}" hidden>
+                                <input type="text" name="image" placeholder="blog" value="{{ $profile->image }}"
+                                    hidden>
                             </div>
                             <!-- Button3 -->
                             <button type="submit" class="btn3 flex-c-m size31 txt11 trans-0-4">

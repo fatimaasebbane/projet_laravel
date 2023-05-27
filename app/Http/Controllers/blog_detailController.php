@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,10 +54,10 @@ class blog_detailController extends Controller
     {
         $count=Comment::where('id_blog',$id)->count();
         $blog=Blog::find($id);
-        $id_user=Auth::id();
+        $profile=Profil::where('id_user',Auth::id())->first();
         $comments=Comment::where('id_blog',$id)->get();
         $categories=Category::all();
-        return view('client.blog-detail',compact('comments','id_user','count','blog','categories'));
+        return view('client.blog-detail',compact('comments','count','profile','blog','categories'));
 
     }
 

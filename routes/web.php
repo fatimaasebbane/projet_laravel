@@ -47,7 +47,7 @@ Route::resource('blog',blogController::class);
 Route::resource('category',categoryController::class);
 Route::resource('comment',commentController::class);
 Route::resource('clientContact',ClientContactController::class);
-Route::resource('clientIndex',clientIndex::class);
+Route::resource('clientIndex',clientIndex::class)->middleware('auth');
 Route::resource('clientReservation',clientReservation::class);
 Route::resource('clientAbout',clientAbout::class);
 Route::resource('clientMenu',clientMenu::class);
